@@ -1,0 +1,436 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Metadata
+# ========
+
+<http://purl.org/derecho/vocabulario#> a owl:Ontology;
+    owl:versionInfo "0.1";
+    dcterms:identifier <http://purl.org/derecho>;
+    dcterms:title "Vocabulario de Derecho"@es;
+    dcterms:creator <http://javierdelacueva.es/foaf#me>;
+    dcterms:publisher <http://javierdelacueva.es/foaf#me>;
+    dcterms:description "Una ontología jurídica libre. Versión alfa, se producirán cambios."@es;
+    dcterms:subject "Derecho"@es;
+    dcterms:subject "Ley"@es;
+    dcterms:subject "Resolución judicial"@es;
+    dcterms:subject "Gobierno"@es;
+    dcterms:coverage dbpedia:Spain;
+    dcterms:identifier <http://purl.org/derecho>;
+    dcterms:language "es";
+    dcterms:audience "Estudiosos del Derecho"@es;
+    dcterms:provenance "Obra original"@es;
+    dcterms:rightsholder <http://javierdelacueva.es/foaf#me>;
+    dcterms:hasFormat <http://purl.org/derecho/vocabulario/20100612.html>, 
+                      <http://purl.org/derecho/vocabulario/20100612.rdf>, 
+                      <http://purl.org/derecho/vocabulario/20100612.n3>;
+    dcterms:isVersionOf <http://purl.org/derecho>;
+    dcterms:created "2010-06-12"^^xsd:date;
+    dcterms:modified "2010-06-13"^^xsd:date;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    vann:preferredNamespacePrefix "derecho";
+    vann:preferredNamespaceUri "http://purl.org/derecho/vocabulario#";
+    rdfs:comment "Ontología jurídica libre: conceptos jurídicos. La Ontología jurídica libre nace como un proyecto para el Laboratorio del Procomún, en el marco del Medialab Prado de Madrid."@es;
+    cc:license <http://creativecommons.org/licenses/by-nc-sa/3.0/es>;
+    owl:sameAs dbpedia:Law .
+
+<http://medialab-prado.es/article/ontologia_juridica_libre_-_laboratorio_del_procomun> foaf:primaryTopic <> .
+
+<http://medialab-prado.es/laboratorio_del_procomun> foaf:topic <> .
+
+<http://javierdelacueva.es/foaf#me> a foaf:Person;
+    foaf:name "Javier de la Cueva";
+    foaf:nick "jdelacueva" .
+
+<http://purl.org/derecho/vocabulario/20100612.html> a dctype:Text;
+    dcterms:format [
+        a dcterms:IMT;
+        rdf:value "text/html";
+        rdfs:label "HTML"@es ] .
+
+<http://purl.org/derecho/vocabulario/20100612.rdf> a dctype:Text;
+    dcterms:format [
+        a dcterms:IMT;
+        rdf:value "application/rdf+xml";
+        rdfs:label "RDF"@es ] .
+
+<http://purl.org/derecho/vocabulario/20100612.n3> a dctype:Text;
+    dcterms:format [
+        a dcterms:IMT;
+        rdf:value "text/rdf+n3";
+        rdfs:label "N3"@es ] .
+
+## Esquema de la ontología: 
+## Poder: personas, organismos, información
+#
+# Legislativo: parlamentario, parlamento, normajuridica
+# Ejecutivo: funcionario, organo, normajuridica, dataset
+# Judicial: juez, juzgado, resolucionjudicial
+#
+
+# Normas Jurídicas
+# ================
+
+derecho:NormaJuridica a owl:Class, rdfs:Class;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una norma jurídica"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Norma jurídica"@es;
+    skos:definition "Una norma jurídica de Derecho positivo"@es ;
+    skos:prefLabel "Norma jurídica"@es .
+
+derecho:TratadoInternacional a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridica;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un tratado entre uno o varios Estados"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Tratado Internacional"@es;
+    skos:definition "Un tratado entre uno o varios Estados"@es .
+
+derecho:Constitucion a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridica;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "La norma suprema de un Estado"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Constitución"@es;
+    skos:definition "La norma suprema de un Estado"@es .
+
+derecho:NormaJuridicaEspanola a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridica;
+    dcterms:issued "2010-06-15"^^xsd:date;
+    rdfs:comment "Una norma jurídica del Ordenamiento español"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Una norma jurídica del Ordenamiento español"@es;
+    skos:definition "Una norma jurídica del Ordenamiento central, autonómico o local español"@es .
+
+derecho:LeyOrganica a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una ley orgánica"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Ley orgánica"@es;
+    skos:definition "La norma jurídica del artículo 81.1 de la Constitución española"@es .
+
+derecho:LeyOrdinaria a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una Ley ordinaria"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Ley ordinaria"@es;
+    skos:definition "La norma jurídica del artículo 87 de la Constitución española"@es .
+
+derecho:DecretoLegislativo a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un decreto legislativo"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Decreto legislativo"@es;
+    skos:definition "La norma jurídica del artículo 85 de la Constitución española"@es .
+
+derecho:DecretoLey a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un Decreto-ley"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Decreto-ley"@es;
+    skos:definition "La norma jurídica del artículo 86.1 de la Constitución española"@es .
+
+derecho:LeyDeBases a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una Ley de bases"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Ley de Bases"@es;
+    skos:definition "La norma jurídica del artículo 82.2 de la Constitución española"@es .
+
+derecho:LeyMarco a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una Ley marco"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Ley marco"@es;
+    skos:definition "La norma jurídica del artículo 150.1 de la Constitución española"@es .
+
+derecho:Reglamento a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un reglamento"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Reglamento"@es;
+    skos:definition "La norma jurídica emanada de la potestad reglamentaria de las Administraciones públicas, artículo 97 de la Constitución española"@es .
+
+derecho:Decreto a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un decreto"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Decreto"@es;
+    skos:definition "La norma jurídica del artículo 23.3.1 de la Ley 50/1997, del Gobierno"@es .
+
+derecho:OrdenMinisterial a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una Orden Ministerial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Orden Ministerial"@es;
+    skos:definition "La norma jurídica del artículo 23.3.2 de la Ley 50/1997, del Gobierno"@es .
+
+# Juzgados y Tribunales
+# =====================
+
+# Artículos 53 a 103 de la Ley Orgánica del Poder Judicial
+
+derecho:OrganoJudicial a owl:Class, rdfs:Class;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un órgano judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un órgano judicial"@es;
+    skos:definition "Un órgano judicial"@es .
+
+derecho:OrganoJudicialEspanol a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicial;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un órgano judicial del Estado español"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un órgano judicial del Estado español"@es;
+    skos:definition "Un órgano judicial del Estado español"@es .
+
+derecho:TribunalSupremo a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "El Tribunal Supremo del Estado español"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "El Tribunal Supremo"@es;
+    skos:definition "El Tribunal Supremo es el órgano judicial definido en el artículo 123.1 de la Constitución española y en el artículo 53 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:AudienciaNacional a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "La Audiencia Nacional"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "La Audiencia Nacional"@es;
+    skos:definition "La Audiencia Nacional es el órgano judicial definido en el artículo 62 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:TribunalSuperiorJusticia a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un Tribunal Superior de Justicia"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Tribunal Superior de Justicia"@es;
+    skos:definition "Un Tribunal Superior de Justicia es el órgano judicial definido en el artículo 70 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:AudienciaProvincial a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Una Audiencia Provincial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Una Audiencia Provincial"@es;
+    skos:definition "Una Audiencia Provincial es el órgano judicial definido en el artículo 80 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoPrimeraInstancia a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un Juzgado de Primera Instancia"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Primera Instancia"@es;
+    skos:definition "Un Juzgado de Primera Instancia es el órgano judicial definido en el artículo 85 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoInstruccion a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un Juzgado de Instrucción"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Instrucción"@es;
+    skos:definition "Un Juzgado de Instrucción es el órgano judicial definido en el artículo 87 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoPrimeraInstanciaInstruccion a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Primera Instancia e Instrucción"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Primera Instancia e Instrucción"@es;
+    skos:definition "Un Juzgado de Primera Instancia e Instrucción es el órgano judicial definido en el artículo 84 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoMercantil a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de lo Mercantil"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de lo Mercantil"@es;
+    skos:definition "Un Juzgado de lo Mercantil es el órgano judicial definido en el artículo 86 bis de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoViolenciaMujer a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Violencia sobre la Mujer"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Violencia sobre la Mujer"@es;
+    skos:definition "Un Juzgado de Violencia sobre la Mujer es el órgano judicial definido en el artículo 87 bis de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoCentralInstruccion a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado Central de Instrucción"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado Central de Instrucción"@es;
+    skos:definition "Un Juzgado Central de Instrucción es el órgano judicial definido en el artículo 88 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoPenal a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de lo Penal"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de lo Penal"@es;
+    skos:definition "Un Juzgado de lo Penal es el órgano judicial definido en el artículo 89 bis de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoContenciosoAdministrativo a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de lo Contencioso-Administrativo"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de lo Contencioso-Administrativo"@es;
+    skos:definition "Un Juzgado de lo Contencioso-Administrativo es el órgano judicial definido en el artículo 90 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoSocial a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de lo Social"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de lo Social"@es;
+    skos:definition "Un Juzgado de lo Social es el órgano judicial definido en el artículo 92 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoVigilanciaPenitenciaria a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Vigilancia Penitenciaria"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Vigilancia Penitenciaria"@es;
+    skos:definition "Un Juzgado de Vigilancia Penitenciaria es el órgano judicial definido en el artículo 94.1 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoCentralVigilanciaPenitenciaria a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado Central de Vigilancia Penitenciaria"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado Central de Vigilancia Penitenciaria"@es;
+    skos:definition "Un Juzgado Central de Vigilancia Penitenciaria es el órgano judicial definido en el artículo 94.4 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoMenores a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Menores"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Menores"@es;
+    skos:definition "Un Juzgado de Menores es el órgano judicial definido en el artículo 96.1 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoCentralMenores a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "El Juzgado Central de Menores"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "El Juzgado Central de Menores"@es;
+    skos:definition "El Juzgado Central de Menores es el órgano judicial definido en el artículo 96.2 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoPaz a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Paz"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Paz"@es;
+    skos:definition "Un Juzgado de Paz es el órgano judicial definido en el artículo 99 de la Ley Orgánica del Poder Judicial."@es .
+
+
+# Resoluciones judiciales
+# =======================
+
+derecho:ResolucionJudicial a owl:Class, rdfs:Class;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una resolución judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Resolución judicial"@es;
+    skos:definition "La resolución judicial del capítulo IV del Título III del Libro III de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:ResolucionJudicialEspanola a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicial;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una resolución judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Resolución judicial"@es;
+    skos:definition "La resolución judicial del capítulo IV del Título III del Libro III de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:AcuerdoJudicial a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicialEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un acuerdo judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Acuerdo judicial"@es;
+    skos:definition "La resolución judicial del artículo 244.1 de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:Providencia a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicialEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una providencia judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Providencia"@es;
+    skos:definition "La resolución judicial del artículo 245.1.a de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:Auto a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicialEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un auto judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Auto"@es;
+    skos:definition "La resolución judicial del artículo 245.1.b de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:Sentencia a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicialEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una sentencia judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Sentencia"@es;
+    skos:definition "La resolución judicial del artículo 245.1.c de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+# Disjoint classes
+# ================
+
+derecho: a owl:AllDisjointClasses;
+    owl:members  ( derecho:NormaJuridica derecho:OrganoJudicial derecho:ResolucionJudicial ) .
+
+derecho:NormaJuridica a owl:AllDisjointClasses;
+    owl:members  ( derecho:TratadoInternacional derecho:Constitucion derecho:NormaJuridicaEspanola) . 
+
+derecho:NormaJuridica owl:oneOf ( derecho:TratadoInternacional derecho:Constitucion 
+                      derecho:NormaJuridicaEspanola) .
+
+derecho:NormaJuridicaEspanola a owl:AllDisjointClasses;
+    owl:members  ( derecho:LeyOrganica derecho:LeyOrdinaria derecho:DecretoLegislativo 
+                 derecho:DecretoLey derecho:LeyDeBases derecho:LeyMarco derecho:Reglamento 
+                 derecho:OrdenMinisterial derecho:Decreto ) . 
+
+derecho:NormaJuridicaEspanola owl:oneOf
+    ( derecho:LeyOrganica derecho:LeyOrdinaria derecho:DecretoLegislativo derecho:DecretoLey 
+    derecho:LeyDeBases derecho:LeyMarco derecho:Reglamento derecho:OrdenMinisterial derecho:Decreto ) . 
+
+derecho:OrganoJudicialEspanol a owl:AllDisjointClasses;
+    owl:members  (derecho:TribunalSupremo derecho:AudienciaNacional derecho:TribunalSuperiorJusticia
+                 derecho:AudienciaProvincial derecho:JuzgadoPrimeraInstancia derecho:JuzgadoInstruccion ) .
+
+derecho:OrganoJudicialEspanol owl:oneOf
+    ( derecho:TribunalSupremo derecho:AudienciaNacional derecho:TribunalSuperiorJusticia
+    derecho:AudienciaProvincial derecho:JuzgadoPrimeraInstancia derecho:JuzgadoInstruccion ) .
+
+derecho:ResolucionJudicialEspanola a owl:AllDisjointClasses;
+    owl:members  ( derecho:AcuerdoJudicial derecho:Providencia derecho:Auto derecho:Sentencia ) .
+
+derecho:ResolucionJudicialEspanola owl:oneOf
+    ( derecho:AcuerdoJudicial derecho:Providencia derecho:Auto derecho:Sentencia ) .

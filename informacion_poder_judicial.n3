@@ -1,0 +1,73 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Información generada por las personas utilizando los órganos del poder judicial.
+#
+# Resoluciones judiciales
+# =======================
+
+derecho:ResolucionJudicial a owl:Class, rdfs:Class;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una resolución judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Resolución judicial"@es;
+    skos:definition "La resolución judicial del capítulo IV del Título III del Libro III de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:ResolucionJudicialEspanola a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicial;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una resolución judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Resolución judicial"@es;
+    skos:definition "La resolución judicial del capítulo IV del Título III del Libro III de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:AcuerdoJudicial a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicialEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un acuerdo judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Acuerdo judicial"@es;
+    skos:definition "La resolución judicial del artículo 244.1 de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:Providencia a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicialEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una providencia judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Providencia"@es;
+    skos:definition "La resolución judicial del artículo 245.1.a de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:Auto a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicialEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un auto judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Auto"@es;
+    skos:definition "La resolución judicial del artículo 245.1.b de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+derecho:Sentencia a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:ResolucionJudicialEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una sentencia judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Sentencia"@es;
+    skos:definition "La resolución judicial del artículo 245.1.c de la Ley Orgánica 6/1985, del Poder Judicial"@es .
+
+# Disjoint classes
+# ================
+
+derecho:ResolucionJudicialEspanola a owl:AllDisjointClasses;
+    owl:members  ( derecho:AcuerdoJudicial derecho:Providencia derecho:Auto derecho:Sentencia ) .
+
+derecho:ResolucionJudicialEspanola owl:oneOf
+    ( derecho:AcuerdoJudicial derecho:Providencia derecho:Auto derecho:Sentencia ) .

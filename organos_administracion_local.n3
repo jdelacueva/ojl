@@ -1,0 +1,54 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+## Esquema de la ontología:
+## Poder: personas, organismos, información
+#
+# Legislativo: parlamentario, parlamento, normajuridica
+# Ejecutivo: funcionario, organo, normajuridica, dataset
+# Judicial: juez, juzgado, resolucionjudicial
+# Otros órganos constitucionales: miembros, organos, nombre de la información
+# Legislativos autonómicos: parlamentario, Parlamento, normas autonómica
+# Ejecutivos autonómicos: funcionario, organo, normajuridica, dataset
+# Administración local: Diputados provinciales, alcaldes, concejales, órganos, normativa local
+
+# Organos administracion local
+# ============================
+
+# Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local
+# http://www.boe.es/aeboe/consultas/bases_datos/doc.php?id=BOE-A-1985-5392
+
+derecho:DiputacionProvincial a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una Diputación Provincial"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una Diputación Provincial"@es ;
+    skos:definition "Una Diputación Provincial es órgano de gobierno y administración autónoma de las provincias según el artículo 14.2 de la Constitución española"@es ;
+    skos:prefLabel "Una Diputación Provincial"@es .
+
+derecho:Ayuntamiento a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un ayuntamiento"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un ayuntamiento"@es ;
+    skos:definition "Un ayuntamiento es el órgano al que corresponde la administración y el gobierno de un municipio según el artículo 19 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel ""@es .
+
+derecho:ConcejoAbierto a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un concejo abierto"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un concejo abierto"@es ;
+    skos:definition "Un ayuntamiento es el órgano al que corresponde la administración y el gobierno del municipio que reune los requisitos del artículo 29 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel ""@es .

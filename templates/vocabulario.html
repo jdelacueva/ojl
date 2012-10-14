@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+
+<html 
+   xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dcterms="http://purl.org/dc/terms/">
+
+  <head>
+    <title>Ontología Jurídica Libre: Vocabulario de Derecho</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link href="http://derecho-internet.org/css/ojl-style.css" rel="stylesheet"  type="text/css" /> 
+    <link href="http://derecho-internet.org/ojl/vocabulario/index.rdf" rel="alternate" type="application/rdf+xml" />
+    <style type="text/css">
+      body {
+      background-image: url(http://derecho-internet.org/images/borrador_vocabulario.png);
+      }
+      hr {color:sienna;}
+      p {margin-left:20px;}
+      /* Snip from Dublin core css stylesheet */
+      /* Specs for tables with border */
+      table.border { border-top: 1px solid #CCC; border-left: 1px solid #CCC; margin-bottom: 10px; }
+      table.border th { background: #EEE; font-family: Verdana, Arial,
+      "Arial Unicode MS", Helvetica, sans-serif; text-align: left}
+      table.border td, table.border th { border-right: 1px solid #CCC; border-bottom: 1px solid #CCC; padding: .5em; }
+      /* Specs for tables with no border */
+      table.noborder { margin-bottom: 10px; }
+      table.noborder th { background: #EEE; font-family: Verdana, Arial, "Arial Unicode MS", Helvetica, sans-serif; }
+      table.noborder td, table.noborder th { padding: .5em; }
+    </style>
+  </head>
+
+  <body>
+    <h1>Ontología Jurídica Libre: Vocabulario de Derecho<br /></h1>
+
+    <h2>Borrador. 25 de noviembre de 2010</h2>
+
+    <dl>
+      <dt>Esta versión:</dt>
+      <dd><a href="http://purl.org/derecho/vocabulario/20101125.html">http://purl.org/derecho/vocabulario/20101125.html</a>
+        (<a href="http://purl.org/derecho/vocabulario/20101125.rdf">rdf</a>, <a href="http://purl.org/derecho/vocabulario/20101125.n3">n3/turtle</a>)</dd>
+      
+      <dt>Ultima versión:</dt>
+      <dd><a href="http://purl.org/derecho/vocabulario">http://purl.org/derecho/vocabulario</a>
+        (<a href="http://purl.org/derecho/vocabulario/index.rdf">rdf</a>, <a href="http://purl.org/derecho/vocabulario/index.n3">n3/turtle</a>)</dd>
+      
+      <dt>Autor:</dt>
+      <dd><a property="foaf:mbox"
+             href="mailto:jdelacueva@derecho-internet.org">Javier de
+             la Cueva</a></dd>
+      <dd><a rel="foaf:homepage"
+             href="http://javierdelacueva.es">http://javierdelacueva.es</a>
+    </dl>
+    
+    <p class="copyright">Copyright &#169; 2010 Javier de la Cueva,
+      bajo licencia <a rel="license" href=
+      "http://creativecommons.org/licenses/by/3.0/es/">Creative
+      Commons Atribución</a></p>
+
+      <hr />
+
+    <h2 id="seccion-status">Resumen</h2>
+    <p>
+      Este documento contiene las clases y propiedades de un
+      vocabulario de Derecho utilizando las tecnologías RDF y OWL del
+      W3C. El propósito final de la Ontología Jurídica Libre consiste
+      en representar el vocabulario de los siguientes términos de
+      nuestro Ordenamiento Jurídico y, además, las abstracciones
+      necesarias para enlazar o extender el vocabulario con
+      instituciones de otros Ordenamientos.</p>
+
+      <table class="border" cellspacing="0" width="95%" align="center">
+        <tr>
+          <th>Poder</th>
+          <th>Personas</th>
+          <th>Organos</th>
+          <th>Información producida</th>
+        </tr>
+        <tr>
+          <td>Ejecutivo</td>
+          <td>Políticos y funcionarios</td>
+          <td>Gobierno y órganos administrativos</td>
+          <td>Actos administrativos y reglamentos</td>
+        </tr>
+        <tr>
+          <td>Legislativo</td>
+          <td>Parlamentarios</td>
+          <td>Parlamentos</td>
+          <td>Leyes</td>
+        </tr>
+        <tr>
+          <td>Judicial</td>
+          <td>Jueces y Magistrados</td>
+          <td>Juzgados y Tribunales</td>
+          <td>Resoluciones judiciales</td>
+        </tr>
+        <tr>
+          <td>Otros órganos constitucionales</td>
+          <td>Miembros (Magistrados, Consejeros ...)</td>
+          <td>Organos</td>
+          <td>Nombre de la información (sentencias, informes...)</td>
+        </tr>
+        <tr>
+          <th colspan=4>Organización territorial</th>
+        </tr>
+        <tr>
+          <td>Legislativos autonómicos</td>
+          <td>Parlamentarios</td>
+          <td>Parlamentos</td>
+          <td>Normas autonómicas</td>
+        </tr>
+        <tr>
+          <td>Ejecutivos autonómicos</td>
+          <td>Políticos y funcionarios</td>
+          <td>Gobierno y órganos administrativos</td>
+          <td>Actos administrativos y reglamentos</td>
+        </tr>
+        <tr>
+          <td>Administración local</td>
+          <td>Diputados provinciales, alcaldes, concejales</td>
+          <td>Diputaciones provinciales y municipios</td>
+          <td>Normativa local</td>
+        </tr>
+      </table>
+
+    <div class="estado">
+      <h2>Estado de este documento</h2>
+      
+      <p>Este documento es un borrador inicial y sufrirá cambios con
+        total seguridad.</p>
+
+      <p>En esta versión se hallan parcialmente desarrollados los
+        términos de las siguientes secciones:</p>
+
+      <table class="border" cellspacing="0" width="95%" align="center">
+        <tr><th>Poder</th><th>Personas</th><th>Organos</th><th>Información producida</th></tr>
+        <tr>
+          <td>Ejecutivo</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Legislativo</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td align="center">X</td>
+        </tr>
+        <tr>
+          <td>Judicial</td>
+          <td>&nbsp;</td>
+          <td align="center">X</td>
+          <td align="center">X</td>
+        </tr>
+        <tr>
+          <td>Otros órganos constitucionales</td>
+          <td>&nbsp;</td>
+          <td align="center">X</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Legislativos autonómicos</td>
+          <td>&nbsp;</td>
+          <td align="center">X</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Ejecutivos autonómicos</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Administración local</td>
+          <td>&nbsp;</td>
+          <td align="center">X</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Organización territorial</td>
+          <td colspan=3 align="center">X</td>
+        </tr>
+      </table>
+
+      <p>Puede consultar la <a href="#seccion-cambios">sección de
+          cambios</a>, que indica los detalles de las diferentes
+          versiones de este documento.</p>
+    </div>
+      <h2 id="seccion-toc">Contenido</h2>
+
+      <ul>
+        <li><a href="#seccion-ejemplo">Un ejemplo de documento</a></li>
+        <li><a href="#seccion-introduccion">Introducción</a></li>
+        <li><a href="#seccion-uso-terminos">Utilización de términos</a></li>
+        <li><a href="#seccion-ns">El espacio de nombres</a></li>
+        <li><a href="#seccion-clases">Listado de clases</a></li>
+        {% if properties %}
+        <li><a href="#seccion-propiedades">Listado de propiedades</a></li>
+        {% endif %}
+        <li><a href="#seccion-referencias">Referencias a vocabularios externos</li>
+        <li><a href="#seccion-agradecimientos">Agradecimientos</a></li>
+        <li><a href="#seccion-interes">Referencias de interés</a></li>
+        <li><a href="#seccion-meta">¿Cómo se genera éste documento?</a></li>
+        <li><a href="#seccion-cambios">Cambios de este documento</a></li>
+        <li><a href="#seccion-licencia">Licencia de esta obra</a></li>
+      </ul>
+
+      <h2 id="seccion-ejemplo">Un ejemplo de documento</h2>
+
+      <p>Este es un documento que describe un auto judicial, una ley
+        ordinaria y una Audiencia Provincial. El auto hace referencia a
+        otros dos autos y a la ley ordinaria.</p>
+
+      <div class="ejemplo">
+      <pre>
+        @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+        @prefix dbpedia: &lt;http://dbpedia.org/resource/&gt; .
+        @prefix derecho: &lt;http://purl.org/derecho/vocabulario#&gt; .
+
+        &lt;http://example.com/Auto-1&gt; a derecho:Auto ;
+            dcterms:date "2008-09-11" ;
+            dcterms:coverage dbpedia:Spain ;
+            dcterms:creator &lt;http://example.com/Audiencia-1&gt;
+            dcterms:references &lt;http://example.com/Auto-2&gt ;
+            dcterms:references &lt;http://example.com/Auto-3&gt ;
+            dcterms:references &lt;http://example.com/Ley-1&gt .
+
+        &lt;http://example.com/Ley-1&gt; a derecho:LeyOrdinaria ;
+            dcterms:date "2002-07-11" ;
+            dcterms:title "Ley de Servicios de la Sociedad de la Información"@es ;
+            dcterms:coverage dbpedia:Spain ;
+            dcterms:IsReferencedBy &lt;http://example.com/Auto-1&gt .
+
+        &lt;http://example.com/Audiencia-1&gt; a derecho:AudienciaProvincial ;
+            dcterms:coverage dbpedia:Madrid .
+      </pre>
+    </div>
+
+      <p>El primero de los párrafos corresponde a los prefijos de los
+        nombres de espacio utilizados.</p>
+
+      <p>En el segundo párrafo se define el Auto-1, que es una
+      instancia de la clase Auto (derecho:Auto), de fecha 11 de
+      septiembre de 2008 (dcterms:date), cuya aplicación es en España
+      (dbpedia:coverage), creado por la Audiencia-1 (dcterms:creator),
+      y en el que se hace referencia (dcterms:references) a las clases
+      Auto-2, Auto-3 y Ley-1.</p>
+
+      <p>En el tercer párrafo, se define la Ley-1, que es una
+      instancia de la clase LeyOrdinaria (derecho:LeyOrdinaria), de
+      fecha 11 de julio de 2002 (dcterms:date), de título Ley de Servicios
+      de la Sociedad de la Información (dcterms:title), cuya aplicación es
+      en España (dcterms:coverage) y que es referenciada por la clase
+      Auto-1.
+      </p>
+
+      <p>En el cuarto párrafo, se define la Audiencia-1, que es una
+      instancia de la clase AudienciaProvincial
+      (derecho:AudienciaProvincial), cuya aplicación es en Madrid.
+
+  <h2 id="seccion-introduccion">Introducción</h2>
+      <p>En el marco
+      del <a href="http://medialab-prado.es/laboratorio_del_procomun">Laboratorio
+      del Procomún</a>, en el Medialab-Prado, se propuso el proyecto
+      de elaborar
+      una <a href="http://medialab-prado.es/article/ontologia_juridica_libre_-_laboratorio_del_procomun">Ontología
+      Jurídica Libre</a>. Si bien existe
+      una <a href="http://idt.uab.es/publications/publications.htm">notable
+      literatura académica</a> (especialmente la monumental tesis
+      doctoral de Núria Casellas Caralt, «Modelling Legal Knowledge
+      through Ontologies. OPJK: the Ontology of Professional Judicial
+      Knowledge»
+      [<a href="http://idt.uab.es/~ncasellas/nuria_casellas_thesis.pdf">descarga
+      archivo pdf</a>]), sin embargo no existe (o no he logrado
+      encontrar) una ontología libre adaptada a nuestro Ordenamiento
+      Jurídico.</p>
+
+  <h2 id="seccion-uso-terminos">Utilización de términos</h2>
+      <p>En la descripción de las clases y de las propiedades se
+      utilizará el artículo definido «el/la» cuando exista una sola
+      instancia del término y el artículo indefinido «un/una» cuando
+      existan cero o más instancias.</p>
+
+      <p>Ejemplo: El Tribunal Supremo, Un Juzgado de lo Penal.</p>
+
+  <h2 id="seccion-ns">El espacio de nombres</h2>
+
+      <p>El prefijo preferido es «derecho». El URI de la Ontología
+        Jurídica Libre es http://purl.org/derecho/vocabulario#</p>
+      <pre>
+        @prefix derecho: &lt;http://purl.org/derecho/vocabulario#&gt; .
+      </pre>
+    </p>
+
+  <h2 id="seccion-clases">Listado de clases</h2>
+
+  <h3>Clases:</h3>
+
+      <p>|
+        {% for item in clases %}
+        <a href="#{{item.subject}}">{{ item.subject }}</a> |
+        {% endfor %}
+      </p>
+      {% for item in clases %}
+
+      <table class="border" cellspacing="0" width="95%" align="center"> 
+        <th colspan=2><a name="{{item.subject}}">{{ item.subject }}</a></th>
+        {% for item in item.po %}
+        <tr><td>{{ item.predicate }}</td><td> {{ item.object }}</td></tr>
+        {% endfor %}
+      </table>
+      {% endfor %}
+  
+  {% if properties %}
+  <h2 id="seccion-propiedades">Listado de propiedades</h2>
+
+  <h3>Propiedades:</h3>
+
+      <p>|
+        {% for item in properties %}
+        <a href="#{{item.subject}}">{{ item.subject }}</a> |
+        {% endfor %}
+      </p>
+      {% for item in properties %}
+
+      <table class="border" cellspacing="0" width="95%" align="center"> 
+        <th colspan=2><a name="{{item.subject}}">{{ item.subject }}</a></th>
+        {% for item in item.po %}
+        <tr><td>{{ item.predicate }}</td><td> {{ item.object }}</td></tr>
+        {% endfor %}
+      </table>
+      {% endfor %}
+
+{% endif %}
+
+  <h2 id="seccion-referencias">Referencias a vocabularios externos</h2>
+
+  <table class="border" cellspacing="0" width="95%" align="center"> 
+    {% for item in referencias|sort %}
+    <tr><td>{{ item.prefix }}</td><td> {{item.iri }}</td></tr>
+    {% endfor %}
+  </table>
+  
+  <h2 id="seccion-agradecimientos">Agradecimientos</h2>
+  
+    <p>A Antonio Lafuente, alma mater del Laboratorio del Procomún. A
+      Josema Alonso, por explicarme y hacer comprensibles cuestiones
+      que parecían imposibles. A todos los integrantes de Medialab
+      Prado, por hacer posible el Laboratorio del Procomún. A todos
+      los que acuden al Laboratorio y enseñan lo que saben hacer. A
+      mis maestros de escomposlinux. A los integrantes de la
+      Judicatura española, quienes han defendido en sus resoluciones
+      que un enlace no supone vulneración de la propiedad intelectual,
+      lo que permite una mayor seguridad jurídica en el desarrollo de
+      la web semántica (el elemento predicado del triplete -sujeto,
+      predicado, objeto- no vulnera la propiedad intelectual). Y a
+      todos aquellos que vierten desinteresadamente sus conocimientos
+      dentro y fuera de la Red.</p>
+
+    <h2 id="#seccion-interes">Referencias de interés</h2>
+
+    <ul>
+      <li>
+        <a href="http://www.estrellaproject.org/">Estrella
+          Project</a>: <a href="http://www.estrellaproject.org/lkif-core/">LKIF-Core Ontology</a>
+      </li>
+      <li>
+        <a href="http://risp.asturias.es/catalogo/index.html">Catálogo
+        de Datos de Asturias</a>:
+        <ol>
+          <li><a href="http://risp.asturias.es/vocab/empleo/oferta-formativa.html">Vocabulario de la Oferta Formativa</a></li>
+          <li><a href="http://risp.asturias.es/vocab/comun/gobierno.html">Vocabulario de la estructura del Gobierno del Principado de Asturias</a>
+          </li>
+          <li><a href="http://risp.asturias.es/vocab/comun/localizacion.html">Vocabulario de una Localización</a>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <a href="http://opendata.euskadi.net/">Open Data Euskadi</a>: <a href="http://opendata.euskadi.net/catalog">Catálogo de datos</a>
+      </li>
+      <li>
+        <a href="http://oegov.org/">oeGOV: Ontologies for e-Government</a>
+      </li>
+      <li>Laboratorio di Ontologia Applicata (Consiglio Nazionale
+      delle
+      Ricerche): <a href="http://www.loa-cnr.it/ontologies/CLO/CoreLegal.owl">Extension
+      of DUL for representing juridical entities</a>
+      </li>
+    </ul>
+
+    <h2 id="seccion-meta">¿Cómo se genera éste documento?</h2>
+    
+    <dl>
+      <dt>La ontología</dt>
+      <dd>Es un simple archivo de texto plano en notación n3. Mediante
+        rdflib se transforma en RDF.</dd>
+    
+      <dt>Este documento</dt>
+      <dd>Se utiliza un script en Python haciendo uso de rdflib y de
+      plantillas jinja2.</dd>
+
+      <dt>Fuentes del proyecto</dt>
+        <dd>Las fuentes de este proyecto se hallan en un repositorio público
+          accesible en el siguiente enlace:
+          <pre><a href="http://derecho-internet.org/svn/kelsen/trunk/rdf">http://derecho-internet.org/svn/kelsen/trunk/rdf</a></pre>
+        </dd>
+    </dl>
+
+    <h2 id="seccion-cambios">Cambios de este documento</h2>
+    <ul>
+      <li id="seccion-cambios20100626">2010-06-26: Nueva versión de
+        este
+        documento. <a href="http://purl.org/derecho/vocabulario/20100626.html">http://purl.org/derecho/vocabulario/20100626.html</a>
+        (<a href="http://purl.org/derecho/vocabulario/20100626.rdf">rdf</a>, <a href="http://purl.org/derecho/vocabulario/20100626.n3">n3/turtle</a>). Creación
+        de las clases: AudienciaNacional, AudienciaProvincial,
+        JuzgadoCentralInstruccion, JuzgadoCentralMenores,
+        JuzgadoCentralVigilanciaPenitenciaria,
+        JuzgadoContenciosoAdministrativo, JuzgadoInstruccion,
+        JuzgadoMenores, JuzgadoMercantil, JuzgadoPaz, JuzgadoPenal,
+        JuzgadoPrimeraInstancia, JuzgadoPrimeraInstanciaInstruccion,
+        JuzgadoSocial, JuzgadoVigilanciaPenitenciaria,
+        JuzgadoViolenciaMujer, OrganoJudicial, OrganoJudicialEspanol,
+        ResolucionJudicialEspanola, TribunalSuperiorJusticia,
+        TribunalSupremo.</li>
+
+      <li id="seccion-cambios20100623">2010-06-23: Nueva versión de
+        este
+        documento. <a href="http://purl.org/derecho/vocabulario/20100626.html">http://purl.org/derecho/vocabulario/20100623.html</a>. Creación
+        de la clase: NormaJuridicaEspanola.
+        (<a href="http://purl.org/derecho/vocabulario/20100623.rdf">rdf</a>, <a href="http://purl.org/derecho/vocabulario/20100623.n3">n3/turtle</a>).</li>
+      <li id="seccion-cambios20100613">2010-06-13: Publicación vocabulario en formato rdf.</li>
+      <li id="seccion-cambios20100612b">2010-06-12: Publicación vocabulario en formato n3.</li>
+      <li id="seccion-cambios20100612a">2010-06-12: Primera versión de
+        este
+        documento. <a href="http://purl.org/derecho/vocabulario/20100612.html">http://purl.org/derecho/vocabulario/20100612.html</a>
+        (<a href="http://purl.org/derecho/vocabulario/20100612.rdf">rdf</a>, <a href="http://purl.org/derecho/vocabulario/20100612.n3">n3/turtle</a>). Creación
+        de las clases: AcuerdoJudicial, Auto, Constitucion, Decreto,
+        DecretoLegislativo, DecretoLey, LeyDeBases, LeyMarco,
+        LeyOrdinaria, LeyOrganica, NormaJuridica,
+        OrdenMinisterial, Providencia,
+        Reglamento, ResolucionJudicial, Sentencia,
+        TratadoInternacional.
+      </li>
+    </ul>
+
+<!--  <div about=""  resource="http://www.w3.org/TR/rdfa-syntax" --
+  --  rel="dct:conformsTo" /> 
+  <p about=""><a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;" 
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa-blue"
+        alt="Valid XHTML + RDFa"  /></a> -->
+
+<h2 id="seccion-licencia">Licencia de esta obra</h2>
+<!-- Creative Commons License -->
+<a href="http://creativecommons.org/licenses/es/by/3.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding:
+  5px;" src="http://i.creativecommons.org/l/by/3.0/es/88x31.png"
+  /></a> La Ontología Jurídica Libre (OJL) se halla licenciada bajo
+  una licencia <a rel="license" href=
+  "http://creativecommons.org/licenses/by/3.0/es/">Creative Commons
+  Atribución</a>.</p>
+</body>
+</html>

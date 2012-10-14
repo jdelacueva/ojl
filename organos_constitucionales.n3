@@ -1,0 +1,231 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Metadata
+# ========
+
+<http://purl.org/derecho/vocabulario#> a owl:Ontology ;
+    owl:versionInfo "20100626" ;
+    owl:priorVersion "20100623" ;
+    dcterms:identifier <http://purl.org/derecho/organos> ;
+    dcterms:title "Vocabulario de los órganos instituidos en la Constitución española"@es ;
+    dcterms:creator <http://javierdelacueva.es/foaf#me> ;
+    dcterms:publisher <http://javierdelacueva.es/foaf#me> ;
+#    dcterms:description "Una ontología jurídica libre. Versión alfa, se producirán cambios."@es ;
+    dcterms:subject "Derecho"@es ;
+    dcterms:subject "Ley"@es ;
+    dcterms:subject "Resolución judicial"@es ;
+    dcterms:subject "Gobierno"@es ;
+    dcterms:coverage dbpedia:Spain ;
+    dcterms:language "es" ;
+    dcterms:audience "Estudiosos del Derecho"@es ;
+    dcterms:provenance "Obra original"@es ;
+    dcterms:rightsholder <http://javierdelacueva.es/foaf#me> ;
+#    dcterms:hasFormat <http://purl.org/derecho/vocabulario/20100612.html> ,
+#                      <http://purl.org/derecho/vocabulario/20100612.rdf> ,
+#                      <http://purl.org/derecho/vocabulario/20100612.n3> ;
+#    dcterms:isVersionOf <http://purl.org/derecho> ;
+    dcterms:created "2010-06-27"^^xsd:date ;
+    dcterms:modified "2010-06-27"^^xsd:date ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+#    vann:preferredNamespacePrefix "derecho" ;
+#    vann:preferredNamespaceUri "http://purl.org/derecho/vocabulario#" ;
+    rdfs:comment "Organos constitucionales de la Ontología jurídica libre: conceptos jurídicos. La Ontología jurídica libre nace como un proyecto para el Laboratorio del Procomún, en el marco del Medialab Prado de Madrid."@es ;
+    cc:license <http://creativecommons.org/licenses/by-nc-sa/3.0/es> .
+
+<http://javierdelacueva.es/foaf#me> a foaf:Person;
+    foaf:name "Javier de la Cueva";
+    foaf:nick "jdelacueva" .
+
+# <http://purl.org/derecho/vocabulario/20100612.html> a dctype:Text;
+#     dcterms:format [
+#         a dcterms:IMT;
+#         rdf:value "text/html";
+#         rdfs:label "HTML"@es ] .
+#
+# <http://purl.org/derecho/vocabulario/20100612.rdf> a dctype:Text;
+#     dcterms:format [
+#         a dcterms:IMT;
+#         rdf:value "application/rdf+xml";
+#         rdfs:label "RDF"@es ] .
+#
+# <http://purl.org/derecho/vocabulario/20100612.n3> a dctype:Text;
+#     dcterms:format [
+#         a dcterms:IMT;
+#         rdf:value "text/rdf+n3";
+#         rdfs:label "N3"@es ] .
+#
+
+## Esquema de la ontología:
+## Poder: personas, organismos, información
+#
+# Legislativo: parlamentario, parlamento, normajuridica
+# Ejecutivo: funcionario, organo, normajuridica, dataset
+# Judicial: juez, juzgado, resolucionjudicial
+# Otros órganos constitucionales: miembros, organos, nombre de la información
+# Legislativos autonómicos: parlamentario, Parlamento, normas autonómica
+# Ejecutivos autonómicos: funcionario, organo, normajuridica, dataset
+# Administración local: Diputados provinciales, alcaldes, concejales, órganos, normativa local
+
+# Otros organos constitucionales
+# ==============================
+
+derecho:OrganoConstitucionalEspanol a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "Un órgano instituido en la Constitución española"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un órgano instituido en la Constitución española"@es ;
+    skos:definition "Un órgano instituido en la Constitición española"@es ;
+    skos:prefLabel "Un órgano instituido en la Constitución española"@es .
+
+derecho:DefensorPueblo a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Defensor del Pueblo"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Defensor del Pueblo"@es ;
+    skos:definition "El Defensor del Pueblo se define en el artículo 54 de la Constitución Española como el alto comisionado de las Cortes Generales, designado por éstas para la defensa de los derechos comprendidos en este Título I de la Constitución Española, a cuyo efecto podrá supervisar la actividad de la Administración, dando cuenta a las Cortes Generales"@es ;
+    skos:prefLabel "El Defensor del Pueblo"@es .
+
+derecho:Corona a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "La Corona"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "La Corona"@es ;
+    skos:definition "El Jefe del Estado definido en el artículo 56.1 de la Constitución española"@es ;
+    skos:prefLabel "La Corona"@es .
+
+derecho:CortesGenerales a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "Las Cortes Generales"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Las Cortes Generales"@es ;
+    skos:definition "El poder legislativo definido en el artículo 66.1 de la Constitución española: están formadas por el Congreso de los Diputados y el Senado"@es ;
+    skos:prefLabel "Las Cortes Generales"@es .
+
+derecho:CongresoDiputados a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Congreso de los Diputados"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Congreso de los Diputados"@es ;
+    skos:definition "La cámara parlamentaria definida en el artículo 68 de la Constitución española"@es ;
+    skos:prefLabel "Las Cortes Generales"@es .
+
+derecho:Senado a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Senado"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Senado"@es ;
+    skos:definition "La cámara parlamentaria definida en el artículo 69 de la Constitución española"@es ;
+    skos:prefLabel "El Senado"@es .
+
+derecho:CortesGenerales  owl:equivalentClass  [
+    rdf:type     owl:Class ;
+    owl:unionOf  ( derecho:CongresoDiputados derecho:Senado )
+    ] .
+
+# Pleno, comisiones... órganos de las cámaras en artículos 74 a 76, 78 y 167.1 CE.
+
+derecho:Gobierno a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Gobierno"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Gobierno"@es ;
+    skos:definition "El órgano constitucional que ejerce la función ejecutiva definido en el artículo 97 de la Constitución española"@es ;
+    skos:prefLabel "El Gobierno"@es .
+
+derecho:AdministracionPublica a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "La Administración pública"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "La Administración pública"@es ;
+    skos:definition "Los órganos de administración del Estado, definido en el artículo 103 de la Constitución española"@es ;
+    skos:prefLabel "La Administración pública"@es .
+
+derecho:FuerzasCuerposSeguridad a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "Las Fuerzas y Cuerpos de Seguridad del Estado"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Las Fuerzas y Cuerpos de Seguridad del Estado"@es ;
+    skos:definition "El órgano encargado de proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana definido en el artículo 104.1 de la Constitución española"@es ;
+    skos:prefLabel "Las Fuerzas y Cuerpos de Seguridad del Estado"@es .
+
+derecho:ConsejoEstado a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Consejo de Estado"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Consejo de Estado"@es ;
+    skos:definition "El Consejo de Estado es el supremo órgano consultivo del Gobierno, definido en el artículo 107 de la Constitución española"@es ;
+    skos:prefLabel "El Consejo de Estado"@es .
+
+derecho:ConsejoGeneralPoderJudicial a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Consejo General del Poder Judicial"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Consejo General del Poder Judicial"@es ;
+    skos:definition "El órgano de gobierno de los Jueces y Magistrados definido en el artículo 122.2 de la Constitución española"@es ;
+    skos:prefLabel "El Consejo General del Poder Judicial"@es .
+
+derecho:MinisterioFiscal a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Ministerio Fiscal"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Ministerio Fiscal"@es ;
+    skos:definition ""@es ;
+    skos:prefLabel "El Ministerio Fiscal"@es .
+
+derecho:Jurado a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "Un Jurado"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un Jurado"@es ;
+    skos:definition "La institución a través de la cual los ciudadanos participan en la administración de Justicia, definido en el artículo 125 de la Constitución española"@es ;
+    skos:prefLabel "Un Jurado"@es .
+
+derecho:ConsejoEconomico a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Consejo económico"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Consejo económico"@es ;
+    skos:definition "El Consejo económico de planificación del artículo 131.2 de la Constitución española (ver sentencia 76/1983 del Tribunal Constitucional, que establece que este Consejo no es el Consejo Económico y Social actualmente existente)"@es ;
+    skos:prefLabel "El Consejo económico"@es .
+
+derecho:TribunalCuentas a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Tribunal de Cuentas"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Tribunal de Cuentas"@es ;
+    skos:definition "El Tribunal de Cuentas es el supremo órgano fiscalizador de las cuentas y de la gestión económica de Estado definido en el artículo 136.1 de la Constitución española"@es ;
+    skos:prefLabel "El Tribunal de Cuentas"@es .
+
+derecho:TribunalConstitucional a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoConstitucionalEspanol ;
+    dcterms:issued "2010-06-27"^^xsd:date ;
+    rdfs:comment "El Tribunal Constitucional"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "El Tribunal Constitucional"@es ;
+    skos:definition ""@es ;
+    skos:prefLabel "El Tribunal Constitucional"@es .

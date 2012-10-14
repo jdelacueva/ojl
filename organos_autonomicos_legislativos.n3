@@ -1,0 +1,37 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+## Esquema de la ontología:
+## Poder: personas, organismos, información
+#
+# Legislativo: parlamentario, parlamento, normajuridica
+# Ejecutivo: funcionario, organo, normajuridica, dataset
+# Judicial: juez, juzgado, resolucionjudicial
+# Otros órganos constitucionales: miembros, organos, nombre de la información
+# Legislativos autonómicos: parlamentario, Parlamento, normas autonómica
+# Ejecutivos autonómicos: funcionario, organo, normajuridica, dataset
+# Administración local: Diputados provinciales, alcaldes, concejales, órganos, normativa local
+
+# Organos legislativos autonómicos
+# ================================
+
+derecho:AsambleaLegislativa a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un órgano parlamentario de una Comunidad Autónoma"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un órgano parlamentario de una Comunidad Autónoma"@es ;
+    skos:definition "Una Asamblea legislativa es el órgano parlamentario de una Comunidad Autónoma, según el artículo 152.1 de la Constitución española"@es ;
+    skos:prefLabel "Un órgano parlamentario de una Comunidad Autónoma"@es .
+
+# Composición de la asamblea legislativa
+# Verificar todos los Estatutos de Autonomía

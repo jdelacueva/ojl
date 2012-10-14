@@ -1,0 +1,171 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+## Esquema de la ontología:
+## Poder: personas, organismos, información
+#
+# Legislativo: parlamentario, parlamento, normajuridica
+# Ejecutivo: funcionario, organo, normajuridica, dataset
+# Judicial: juez, juzgado, resolucionjudicial
+# Otros órganos constitucionales: miembros, organos, nombre de la información
+# Legislativos autonómicos: parlamentario, Parlamento, normas autonómica
+# Ejecutivos autonómicos: funcionario, organo, normajuridica, dataset
+# Administración local: Diputados provinciales, alcaldes, concejales, órganos, normativa local
+# Organización territorial
+
+# Organización Territorial
+# ========================
+
+derecho:Estado a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un Estado"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un Estado"@es ;
+    skos:definition "Un Estado"@es ;
+    skos:prefLabel "Un Estado"@es .
+
+derecho:ComunidadAutonoma a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una Comunidad Autónoma"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una Comunidad Autónoma"@es ;
+    skos:definition "Una Comunidad Autónoma"@es ;
+    skos:prefLabel "Una Comunidad Autónoma"@es .
+
+derecho:CiudadAutonoma a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una Ciudad Autónoma"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una Ciudad Autónoma"@es ;
+    skos:definition "Una Ciudad Autónoma"@es ;
+    skos:prefLabel "Una Ciudad Autónoma"@es .
+
+derecho:Provincia a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una Provincia"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una Provincia"@es ;
+    skos:definition "Una Provincia"@es ;
+    skos:prefLabel "Una Provincia"@es .
+
+derecho:Isla a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una isla"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una isla"@es ;
+    skos:definition "Una isla es una entidad local territorial según el artículo 3.1.c) de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Una isla"@es .
+
+derecho:Municipio a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un Municipio"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un Municipio"@es ;
+    skos:definition "Un Municipio es el ente local definido en el artículo 140 de la Constitución española y la entidad básicas de la organización territorial del Estado según el artículo 1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Un Municipio"@es .
+
+derecho:DistritoMunicipal a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un distrito municipal"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un distrito municipal"@es ;
+    skos:definition "Un distrito municipal es un órgano territorial de gestión desconcentrada según el artículo 24 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Un distrito municipal"@es .
+
+derecho:Comarca a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una comarca"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una comarca"@es ;
+    skos:definition "Una comarca es una entidad local territorial según el artículo 3.2.b) de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Una comarca"@es .
+
+derecho:AreaMetropolitana a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un área metropolitana"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un área metropolitana"@es ;
+    skos:definition "Un área metropolitana es una entidad local territorial según el artículo 3.2.c) de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Un área metropolitana"@es .
+
+derecho:MancomunidadMunicipios a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una mancomunidad de municipios"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una mancomunidad de municipios"@es ;
+    skos:definition "Una mancomunidad de municipios es una entidad local territorial según el artículo 3.2.d) de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Una mancomunidad de municipios"@es .
+
+derecho:Caserio a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un caserío"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un caserío es una entidad de ámbito territorial inferior al Municipio según el artículo 45.1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:definition "Un caserío"@es ;
+    skos:prefLabel "Un caserío"@es .
+
+derecho:Parroquia a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una parroquia"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una parroquia"@es ;
+    skos:definition "Una Parroquia es una entidad de ámbito territorial inferior al Municipio según el artículo 45.1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Una parroquia"@es .
+
+derecho:Aldea a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una aldea"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una aldea"@es ;
+    skos:definition "Una aldea es una entidad de ámbito territorial inferior al Municipio según el artículo 45.1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Una aldea"@es .
+
+derecho:Barrio a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un barrio"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un barrio"@es ;
+    skos:definition "Un barrio es una entidad de ámbito territorial inferior al Municipio según el artículo 45.1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Un barrio"@es .
+
+derecho:Anteiglesia a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una anteiglesia"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una anteiglesia"@es ;
+    skos:definition "Una anteiglesia es una entidad de ámbito territorial inferior al Municipio según el artículo 45.1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Una anteiglesia"@es .
+
+derecho:Concejo a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un concejo"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un concejo"@es ;
+    skos:definition "Un concejo es una entidad de ámbito territorial inferior al Municipio según el artículo 45.1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Un concejo"@es .
+
+derecho:Pedania a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Una pedanía"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Una pedanía"@es ;
+    skos:definition "Una pedanía es una entidad de ámbito territorial inferior al Municipio según el artículo 45.1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Una pedanía"@es .
+
+derecho:Concejo a owl:Class, rdfs:Class ;
+    dcterms:issued "2010-06-28"^^xsd:date ;
+    rdfs:comment "Un concejo"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un concejo"@es ;
+    skos:definition "Un concejo es una entidad de ámbito territorial inferior al Municipio según el artículo 45.1 de la Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local"@es ;
+    skos:prefLabel "Un concejo"@es .

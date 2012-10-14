@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+
+<html 
+   xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dcterms="http://purl.org/dc/terms/">
+
+  <head>
+    <title>Vocabulario de Derecho (Borrador)</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link href="http://xmlns.com/xmlns-style.css" rel="stylesheet"  type="text/css" />
+    <link href="style.css" rel="stylesheet"  type="text/css" />
+    <link href="http://derecho-internet.org/ojl/vocabulario/index.rdf" rel="alternate" type="application/rdf+xml" />
+  </head>
+
+  <body>
+    <h1>Vocabulario de Derecho (Borrador)<br /></h1>
+
+    <h2>Ontología jurídica libre (OJL). 12 junio de 2010</h2>
+
+    <dl>
+      <dt>Esta versión:</dt>
+      <dd><a href="http://derecho-internet.org/ojl/vocabulario/20100612.html">http://derecho-internet.org/ojl/vocabulario/20100612.html</a>
+        (<a href="http://derecho-internet.org/ojl/vocabulario/20100612.rdf">rdf</a>, <a href="http://derecho-internet.org/ojl/vocabulario/20100612.n3">N3/Turtle</a>)</dd>
+      
+      <dt>Ultima versión:</dt>
+      <dd><a href="http://derecho-internet.org/ojl/vocabulario/">http://derecho-internet.org/ojl/vocabulario/</a>
+        (<a href="http://derecho-internet.org/ojl/vocabulario/vocabulario.rdf">rdf</a>, <a href="http://derecho-internet.org/ojl/vocabulario/vocabulario.n3">N3/Turtle</a>)</dd>
+      
+      <dt>Versión previa:</dt>
+      <dd><a href="http://derecho-internet.org/ojl/vocabulario/20100612.html">http://derecho-internet.org/ojl/vocabulario/20100612.html</a>
+        (<a href="http://derecho-internet.org/ojl/vocabulario/20100612.rdf">rdf</a>, <a href="http://derecho-internet.org/ojl/vocabulario/20100612.n3">N3/Turtle</a>)</dd>
+      
+      <dt>Autor:</dt>
+      <dd><a property="foaf:mbox"
+             href="mailto:jdelacueva@derecho-internet.org">Javier de
+             la Cueva</a></dd>
+      <dd><a rel="foaf:homepage"
+             href="http://javierdelacueva.es">http://javierdelacueva.es</a>
+    </dl>
+    
+    <p class="copyright">Copyright &#169; 2010 Javier de la Cueva</p>
+    
+    <hr />
+
+    <h2 id="seccion-status">Resumen</h2>
+    <p>
+      Este documento contiene las clases y propiedades de un
+      vocabulario de Derecho utilizando las tecnologías RDF y OWL del
+      W3C.
+    </p>
+
+    <div class="estado">
+      <h2>Estado de este documento</h2>
+      
+      <p>Este documento incluye la primera de las propuestas de un
+        vocabulario para la construcción de una Ontología Jurídica
+        Libre, por lo que su estado es inicial y sufrirá cambios con
+        total seguridad.</p>
+      <p>Puede consultar la <a href="#seccion-cambios">sección de
+          cambios</a>, que indica los detalles de las diferentes
+          versiones de este documento.</p>
+    </div>      
+      <h2 id="seccion-toc">Contenido</h2>
+
+      <ul>
+        <li><a href="#seccion-ejemplo">Un ejemplo de documento</a></li>
+        <li><a href="#seccion-introduccion">Introducción</a></li>
+        <li><a href="#seccion-clases">Listado de clases</a></li>
+
+        <li><a href="#seccion-meta">¿Cómo se generan los documentos de
+        la OJL?</a></li>
+        <li><a href="#seccion-agradecimientos">Agradecimientos</a></li>
+        <li><a href="#seccion-cambios">Cambios recientes</a></li>
+        <li><a href="#seccion-licencia">Licencia de esta obra</a></li>
+      </ul>
+
+      <h2 id="seccion-ejemplo">Un ejemplo de documento</h2>
+
+    <p>Este es un documento que describe un auto judicial y una ley
+    ordinaria. El auto hace referencia a otros dos autos y a la ley
+    ordinaria.</p>
+
+    <div class="ejemplo">
+
+      <pre>
+        @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+        @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+        @prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+        @prefix dbpedia: &lt;http://dbpedia.org/resource/&gt; .
+        @prefix derecho: &lt;http://purl.org/derecho/vocabulario#&gt; .
+
+        &lt;http://example.com/Auto-1&gt; a derecho:Auto ;
+            dc:date "2008-09-11" ;
+            dc:coverage dbpedia:Spain ;
+            dc:creator "Audiencia Provincial de Madrid" ;
+            dc:references &lt;http://example.com/Auto-2&gt ;
+            dc:references &lt;http://example.com/Auto-3&gt ;
+            dc:references &lt;http://example.com/Ley-1&gt .
+
+        &lt;http://example.com/Ley-1&gt; a derecho:LeyOrdinaria ;
+            dc:date "2002-07-11" ;
+            dc:title "Ley de Servicios de la Sociedad de la Información"@es ;
+            dc:coverage dbpedia:Spain ;
+            dc:IsReferencedBy &lt;http://example.com/Auto-1&gt .
+
+      </pre>
+    </div>
+      <p>El primero de los párrafos corresponde a los prefijos de los
+        nombres de espacio utilizados.</p>
+
+      <p>En el segundo párrafo se define el Auto-1, que es una
+      instancia de la clase Auto (derecho:Auto), de fecha 11 de
+      septiembre de 2008 (dc:date), cuya aplicación es en España
+      (dbpedia:coverage), creado por la Audiencia Provincial de Madrid
+      (dc:creator), que es de la clase Auto (derecho:Auto) y que
+      referencia (dc:references) a las clases Auto-2, Auto-3 y
+      Ley-1.</p>
+
+      <p>En el tercer párrafo, se define la Ley-1, que es una
+      instancia de la clase LeyOrdinaria (derecho:LeyOrdinaria), de
+      fecha 11 de julio de 2002 (dc:date), de título Ley de Servicios
+      de la Sociedad de la Información (dc:title), cuya aplicación es
+      en España (dc:coverage) y que es referenciada por la clase
+      Auto-1.
+      </p>
+
+  <h2 id="seccion-introduccion">Introducción</h2>
+      <p>En el marco del Laboratorio del Procomún, en el
+      Medialab-Prado, se propuso el proyecto de elaborar una Ontología
+      Jurídica Libre. Si bien existe una notable literatura académica
+      sobre este tema, sin embargo no existe (o no he logrado
+      encontrar) una ontología libre que pueda ser utilizada por
+      cualquiera y con cualesquiera fines.</p>
+
+  <h2 id="seccion-ns">El espacio de nombres</h2>
+
+      <p>El prefijo preferido es el de derecho. El URI de la OJL es
+        http://purl.org/derecho/vocabulario#</p>
+      <pre>
+        @prefix derecho: &lt;http://purl.org/derecho/vocabulario#&gt; .
+      </pre>
+    </p>
+
+  <h2 id="seccion-clases">Listado de clases</h2>
+
+  <h3>Clases:</h3>
+  
+  <h4><a name="AcuerdoJudicial">AcuerdoJudicial</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Un acuerdo judicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Acuerdo judicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#ResolucionJudicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La resolución judicial del artículo 244.1 de la Ley Orgánica 6/1985, del Poder Judicial</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="Auto">Auto</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Un auto judicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Auto</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#ResolucionJudicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La resolución judicial del artículo 245.1.b de la Ley Orgánica 6/1985, del Poder Judicial</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="Constitucion">Constitucion</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> La norma suprema de un Estado</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Constitución</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridica</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma suprema de un Estado</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="Decreto">Decreto</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Un decreto</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Decreto</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica del artículo 23.3.1 de la Ley 50/1997, del Gobierno</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="DecretoLegislativo">DecretoLegislativo</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Un decreto legislativo</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Decreto legislativo</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica del artículo 85 de la Constitución española</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="DecretoLey">DecretoLey</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Un Decreto-ley</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Decreto-ley</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica del artículo 86.1 de la Constitución española</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="LeyDeBases">LeyDeBases</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una Ley de bases</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Ley de Bases</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica del artículo 82.2 de la Constitución española</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="LeyMarco">LeyMarco</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una Ley marco</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Ley marco</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica del artículo 150.1 de la Constitución española</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="LeyOrdinaria">LeyOrdinaria</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una Ley ordinaria</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Ley ordinaria</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica del artículo 87 de la Constitución española</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="LeyOrganica">LeyOrganica</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una ley orgánica</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Ley orgánica</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica del artículo 81.1 de la Constitución española</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="NormaJuridica">NormaJuridica</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2002/07/owl#oneOf</td><td> f156423756b6</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una norma jurídica</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Norma jurídica</td></tr>
+    
+    <tr><td>http://www.w3.org/2002/07/owl#members</td><td> f156423756b3</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#AllDisjointClasses</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#prefLabel</td><td> Norma jurídica</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> Una norma jurídica de Derecho positivo</td></tr>
+    
+  </table>
+  
+  <h4><a name="NormaJuridicaEspanola">NormaJuridicaEspanola</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2002/07/owl#oneOf</td><td> f156423756b18</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una norma jurídica del Ordenamiento español</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Una norma jurídica del Ordenamiento español</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridica</td></tr>
+    
+    <tr><td>http://www.w3.org/2002/07/owl#members</td><td> f156423756b9</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> Una norma jurídica del Ordenamiento central, autonómico o local español</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-15</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#AllDisjointClasses</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="OrdenMinisterial">OrdenMinisterial</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una Orden Ministerial</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Orden Ministerial</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica del artículo 23.3.2 de la Ley 50/1997, del Gobierno</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="Providencia">Providencia</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una providencia judicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Providencia</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#ResolucionJudicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La resolución judicial del artículo 245.1.a de la Ley Orgánica 6/1985, del Poder Judicial</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="Reglamento">Reglamento</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Un reglamento</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Reglamento</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridicaEspanola</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La norma jurídica emanada de la potestad reglamentaria de las Administraciones públicas, artículo 97 de la Constitución española</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="ResolucionJudicial">ResolucionJudicial</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2002/07/owl#oneOf</td><td> f156423756b31</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una resolución judicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Resolución judicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2002/07/owl#members</td><td> f156423756b27</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#AllDisjointClasses</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La resolución judicial del capítulo IV del Título III del Libro III de la Ley Orgánica 6/1985, del Poder Judicial</td></tr>
+    
+  </table>
+  
+  <h4><a name="Sentencia">Sentencia</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Una sentencia judicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Sentencia</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#ResolucionJudicial</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> La resolución judicial del artículo 245.1.c de la Ley Orgánica 6/1985, del Poder Judicial</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  <h4><a name="TratadoInternacional">TratadoInternacional</a></h4>
+  <table border=1>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#comment</td><td> Un tratado entre uno o varios Estados</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#isDefinedBy</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#label</td><td> Tratado Internacional</td></tr>
+    
+    <tr><td>http://www.w3.org/2000/01/rdf-schema#subClassOf</td><td> http://purl.org/derecho/vocabulario#NormaJuridica</td></tr>
+    
+    <tr><td>http://www.w3.org/2004/02/skos/core#definition</td><td> Un tratado entre uno o varios Estados</td></tr>
+    
+    <tr><td>http://purl.org/dc/terms/issued</td><td> 2010-06-12</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2002/07/owl#Class</td></tr>
+    
+    <tr><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td><td> http://www.w3.org/2000/01/rdf-schema#Class</td></tr>
+    
+  </table>
+  
+  
+  
+
+  <h2 id="seccion-referencias">Referencias a vocabularios externos</h2>
+
+  <table border=1>
+    
+    <tr><td>cc</td><td> http://creativecommons.org/ns#</td></tr>
+    
+    <tr><td>dbpedia</td><td> http://dbpedia.org/resource/</td></tr>
+    
+    <tr><td>dctype</td><td> http://purl.org/dc/dcmitype/</td></tr>
+    
+    <tr><td>dc</td><td> http://purl.org/dc/elements/1.1/</td></tr>
+    
+    <tr><td>dcterms</td><td> http://purl.org/dc/terms/</td></tr>
+    
+    <tr><td>derecho</td><td> http://purl.org/derecho/vocabulario#</td></tr>
+    
+    <tr><td>vann</td><td> http://purl.org/vocab/vann/</td></tr>
+    
+    <tr><td>rdf</td><td> http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+    
+    <tr><td>rdfs</td><td> http://www.w3.org/2000/01/rdf-schema#</td></tr>
+    
+    <tr><td>xsd</td><td> http://www.w3.org/2001/XMLSchema#</td></tr>
+    
+    <tr><td>owl</td><td> http://www.w3.org/2002/07/owl#</td></tr>
+    
+    <tr><td>skos</td><td> http://www.w3.org/2004/02/skos/core#</td></tr>
+    
+    <tr><td>xml</td><td> http://www.w3.org/XML/1998/namespace</td></tr>
+    
+    <tr><td>foaf</td><td> http://xmlns.com/foaf/0.1/</td></tr>
+    
+  </table>
+  
+  <h2 id="seccion-meta">¿Cómo se generan los documentos de
+    la OJL?</h2>
+
+  <h3>La ontología</h3>
+
+    <p>Es un simple archivo de texto plano en notación n3. Mediante
+      rdflib se transforma en RDF.</p>
+
+    <h3>Este documento</h3>
+
+    <p>Se utiliza un script en Python haciendo uso de rdflib y de
+    plantillas jinja2.</p>
+
+    <h2 id="seccion-agradecimientos">Agradecimientos</h2>
+
+    <p>A Antonio Lafuente, alma mater del Laboratorio del Procomún. A
+      Josema Alonso, por explicarme y hacer comprensibles cuestiones
+      que parecían imposibles. A todos los integrantes de Medialab
+      Prado, por hacer posible el Laboratorio del Procomún. A todos
+      los que acuden al Laboratorio y enseñan lo que saben hacer. A
+      los integrantes de la Judicatura española, quienes han defendido
+      en sus resoluciones que un enlace no supone vulneración de la
+      propiedad intelectual, lo que permite la seguridad jurídica del
+      desarrollo de la web semántica. Y a todos aquellos que vierten
+      desinteresadamente sus conocimientos dentro y fuera de la
+      Red.</p>
+
+    <h2 id="seccion-cambios">Cambios recientes</h2>
+
+    <h3 id="seccion-cambios20100622">2010-06-22</h3>
+    <ul>
+      <li>Publicación: vocabulario en formato html.</li>
+    </ul>
+
+    <h3 id="seccion-cambios20100613">2010-06-13</h3>
+    <ul>
+      <li>Publicación: vocabulario en formato rdf.</li>
+    </ul>
+
+    <h3 id="seccion-cambios20100612">2010-06-12</h3>
+    <ul>
+      <li>Publicación: vocabulario en formato n3.</li>
+    </ul>
+
+<!--  <div about=""  resource="http://www.w3.org/TR/rdfa-syntax" --
+  --  rel="dct:conformsTo" /> 
+  <p about=""><a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;" 
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa-blue"
+        alt="Valid XHTML + RDFa"  /></a> -->
+
+<h2 id="seccion-licencia">Licencia de esta obra</h2>
+  <!-- Creative Commons License -->
+   <a href="http://creativecommons.org/licenses/es/by/3.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding:
+  5px;" src="http://i.creativecommons.org/l/by/3.0/es/88x31.png"
+  /></a> La Ontología Jurídica Libre (OJL) se halla licenciada bajo
+  una licencia <a rel="license" href=
+  "http://creativecommons.org/licenses/by/3.0/es/">Creative Commons
+  Atribución</a>.</p>
+</body>
+</html>

@@ -1,0 +1,1477 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY purl "http://purl.org/" >
+    <!ENTITY medialab-prado "http://medialab-prado.es/" >
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY vann "http://purl.org/vocab/vann/" >
+    <!ENTITY resource "http://dbpedia.org/resource/" >
+    <!ENTITY dcmitype "http://purl.org/dc/dcmitype/" >
+    <!ENTITY ns "http://creativecommons.org/ns#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY foaf2 "http://javierdelacueva.es/foaf#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY article "http://medialab-prado.es/article/" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY vocabulario "http://purl.org/derecho/vocabulario#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY vocabulario3 "http://purl.org/derecho/vocabulario/20100612." >
+    <!ENTITY by-nc-sa "http://creativecommons.org/licenses/by-nc-sa/3.0/" >
+    <!ENTITY vocabulario2 "file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3#" >
+]>
+
+
+<rdf:RDF xmlns="&purl;derecho/vocabulario#"
+     xml:base="&purl;derecho/vocabulario#"
+     xmlns:foaf2="http://javierdelacueva.es/foaf#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:terms="&purl;dc/terms/"
+     xmlns:dcmitype="&purl;dc/dcmitype/"
+     xmlns:resource="http://dbpedia.org/resource/"
+     xmlns:vann="&purl;vocab/vann/"
+     xmlns:medialab-prado="http://medialab-prado.es/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:article="&medialab-prado;article/"
+     xmlns:vocabulario="&purl;derecho/vocabulario#"
+     xmlns:purl="http://purl.org/"
+     xmlns:vocabulario3="&purl;derecho/vocabulario/20100612."
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:vocabulario2="file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:by-nc-sa="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+    <owl:Ontology rdf:about="">
+        <owl:versionInfo>0.1</owl:versionInfo>
+        <rdfs:comment xml:lang="es"
+            >Ontolog&#237;a jur&#237;dica libre: conceptos jur&#237;dicos. La Ontolog&#237;a jur&#237;dica libre nace como un proyecto para el Laboratorio del Procom&#250;n, en el marco del Medialab Prado de Madrid.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:ObjectProperty rdf:about="&ns;license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/coverage -->
+
+    <owl:ObjectProperty rdf:about="&purl;dc/terms/coverage"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:ObjectProperty rdf:about="&purl;dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/format -->
+
+    <owl:ObjectProperty rdf:about="&purl;dc/terms/format"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/hasFormat -->
+
+    <owl:ObjectProperty rdf:about="&purl;dc/terms/hasFormat"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:ObjectProperty rdf:about="&purl;dc/terms/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/isVersionOf -->
+
+    <owl:ObjectProperty rdf:about="&purl;dc/terms/isVersionOf"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:ObjectProperty rdf:about="&purl;dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/rightsholder -->
+
+    <owl:ObjectProperty rdf:about="&purl;dc/terms/rightsholder"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
+
+    <owl:ObjectProperty rdf:about="&foaf;primaryTopic"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/topic -->
+
+    <owl:ObjectProperty rdf:about="&foaf;topic"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/audience -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/audience"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/language"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/provenance -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/provenance"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="&purl;dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:DatatypeProperty rdf:about="&purl;vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:DatatypeProperty rdf:about="&purl;vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#value -->
+
+    <owl:DatatypeProperty rdf:about="&rdf;value"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:DatatypeProperty rdf:about="&skos;definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:DatatypeProperty rdf:about="&skos;prefLabel"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;name"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/nick -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;nick"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/dcmitype/Text -->
+
+    <owl:Class rdf:about="&purl;dc/dcmitype/Text"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/IMT -->
+
+    <owl:Class rdf:about="&purl;dc/terms/IMT"/>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#AcuerdoJudicial -->
+
+    <owl:Class rdf:about="AcuerdoJudicial">
+        <rdfs:label xml:lang="es"
+            >Acuerdo judicial</rdfs:label>
+        <rdfs:subClassOf rdf:resource="ResolucionJudicialEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un acuerdo judicial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#AudienciaNacional -->
+
+    <owl:Class rdf:about="AudienciaNacional">
+        <rdfs:label xml:lang="es"
+            >La Audiencia Nacional</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >La Audiencia Nacional</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#AudienciaProvincial -->
+
+    <owl:Class rdf:about="AudienciaProvincial">
+        <rdfs:label xml:lang="es"
+            >Una Audiencia Provincial</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una Audiencia Provincial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Auto -->
+
+    <owl:Class rdf:about="Auto">
+        <rdfs:label xml:lang="es">Auto</rdfs:label>
+        <rdfs:subClassOf rdf:resource="ResolucionJudicialEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un auto judicial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Constitucion -->
+
+    <owl:Class rdf:about="Constitucion">
+        <rdfs:label xml:lang="es">Constituci&#243;n</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridica"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >La norma suprema de un Estado</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Decreto -->
+
+    <owl:Class rdf:about="Decreto">
+        <rdfs:label xml:lang="es">Decreto</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Un decreto</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#DecretoLegislativo -->
+
+    <owl:Class rdf:about="DecretoLegislativo">
+        <rdfs:label xml:lang="es"
+            >Decreto legislativo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un decreto legislativo</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#DecretoLey -->
+
+    <owl:Class rdf:about="DecretoLey">
+        <rdfs:label xml:lang="es">Decreto-ley</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Un Decreto-ley</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoCentralInstruccion -->
+
+    <owl:Class rdf:about="JuzgadoCentralInstruccion">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado Central de Instrucci&#243;n</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado Central de Instrucci&#243;n</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoCentralMenores -->
+
+    <owl:Class rdf:about="JuzgadoCentralMenores">
+        <rdfs:label xml:lang="es"
+            >El Juzgado Central de Menores</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >El Juzgado Central de Menores</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoCentralVigilanciaPenitenciaria -->
+
+    <owl:Class rdf:about="JuzgadoCentralVigilanciaPenitenciaria">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado Central de Vigilancia Penitenciaria</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado Central de Vigilancia Penitenciaria</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoContenciosoAdministrativo -->
+
+    <owl:Class rdf:about="JuzgadoContenciosoAdministrativo">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de lo Contencioso-Administrativo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de lo Contencioso-Administrativo</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoInstruccion -->
+
+    <owl:Class rdf:about="JuzgadoInstruccion">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de Instrucci&#243;n</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de Instrucci&#243;n</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoMenores -->
+
+    <owl:Class rdf:about="JuzgadoMenores">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de Menores</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de Menores</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoMercantil -->
+
+    <owl:Class rdf:about="JuzgadoMercantil">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de lo Mercantil</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de lo Mercantil</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoPaz -->
+
+    <owl:Class rdf:about="JuzgadoPaz">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de Paz</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de Paz</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoPenal -->
+
+    <owl:Class rdf:about="JuzgadoPenal">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de lo Penal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de lo Penal</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoPrimeraInstancia -->
+
+    <owl:Class rdf:about="JuzgadoPrimeraInstancia">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de Primera Instancia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de Primera Instancia</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoPrimeraInstanciaInstruccion -->
+
+    <owl:Class rdf:about="JuzgadoPrimeraInstanciaInstruccion">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de Primera Instancia e Instrucci&#243;n</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de Primera Instancia e Instrucci&#243;n</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoSocial -->
+
+    <owl:Class rdf:about="JuzgadoSocial">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de lo Social</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de lo Social</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoVigilanciaPenitenciaria -->
+
+    <owl:Class rdf:about="JuzgadoVigilanciaPenitenciaria">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de Vigilancia Penitenciaria</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de Vigilancia Penitenciaria</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoViolenciaMujer -->
+
+    <owl:Class rdf:about="JuzgadoViolenciaMujer">
+        <rdfs:label xml:lang="es"
+            >Un Juzgado de Violencia sobre la Mujer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Juzgado de Violencia sobre la Mujer</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#LeyDeBases -->
+
+    <owl:Class rdf:about="LeyDeBases">
+        <rdfs:label xml:lang="es">Ley de Bases</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una Ley de bases</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#LeyMarco -->
+
+    <owl:Class rdf:about="LeyMarco">
+        <rdfs:label xml:lang="es">Ley marco</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Una Ley marco</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#LeyOrdinaria -->
+
+    <owl:Class rdf:about="LeyOrdinaria">
+        <rdfs:label xml:lang="es">Ley ordinaria</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una Ley ordinaria</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#LeyOrganica -->
+
+    <owl:Class rdf:about="LeyOrganica">
+        <rdfs:label xml:lang="es">Ley org&#225;nica</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una ley org&#225;nica</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#NormaJuridica -->
+
+    <owl:Class rdf:about="NormaJuridica">
+        <rdfs:label xml:lang="es">Norma jur&#237;dica</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="Constitucion"/>
+                    <rdf:Description rdf:about="NormaJuridicaEspanola"/>
+                    <rdf:Description rdf:about="TratadoInternacional"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una norma jur&#237;dica</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#NormaJuridicaEspanola -->
+
+    <owl:Class rdf:about="NormaJuridicaEspanola">
+        <rdfs:label xml:lang="es"
+            >Una norma jur&#237;dica del Ordenamiento espa&#241;ol</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="LeyDeBases"/>
+                    <rdf:Description rdf:about="LeyOrdinaria"/>
+                    <rdf:Description rdf:about="OrdenMinisterial"/>
+                    <rdf:Description rdf:about="LeyMarco"/>
+                    <rdf:Description rdf:about="LeyOrganica"/>
+                    <rdf:Description rdf:about="DecretoLegislativo"/>
+                    <rdf:Description rdf:about="DecretoLey"/>
+                    <rdf:Description rdf:about="Reglamento"/>
+                    <rdf:Description rdf:about="Decreto"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="NormaJuridica"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una norma jur&#237;dica del Ordenamiento espa&#241;ol</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#OrdenMinisterial -->
+
+    <owl:Class rdf:about="OrdenMinisterial">
+        <rdfs:label xml:lang="es"
+            >Orden Ministerial</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una Orden Ministerial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#OrganoJudicial -->
+
+    <owl:Class rdf:about="OrganoJudicial">
+        <rdfs:label xml:lang="es"
+            >Un &#243;rgano judicial</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un &#243;rgano judicial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#OrganoJudicialEspanol -->
+
+    <owl:Class rdf:about="OrganoJudicialEspanol">
+        <rdfs:label xml:lang="es"
+            >Un &#243;rgano judicial del Estado espa&#241;ol</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="TribunalSuperiorJusticia"/>
+                    <rdf:Description rdf:about="TribunalSupremo"/>
+                    <rdf:Description rdf:about="JuzgadoPrimeraInstancia"/>
+                    <rdf:Description rdf:about="JuzgadoInstruccion"/>
+                    <rdf:Description rdf:about="AudienciaNacional"/>
+                    <rdf:Description rdf:about="AudienciaProvincial"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="OrganoJudicial"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un &#243;rgano judicial del Estado espa&#241;ol</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Providencia -->
+
+    <owl:Class rdf:about="Providencia">
+        <rdfs:label xml:lang="es">Providencia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="ResolucionJudicialEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una providencia judicial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Reglamento -->
+
+    <owl:Class rdf:about="Reglamento">
+        <rdfs:label xml:lang="es">Reglamento</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridicaEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es">Un reglamento</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#ResolucionJudicial -->
+
+    <owl:Class rdf:about="ResolucionJudicial">
+        <rdfs:label xml:lang="es"
+            >Resoluci&#243;n judicial</rdfs:label>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una resoluci&#243;n judicial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#ResolucionJudicialEspanola -->
+
+    <owl:Class rdf:about="ResolucionJudicialEspanola">
+        <rdfs:label xml:lang="es"
+            >Resoluci&#243;n judicial</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="AcuerdoJudicial"/>
+                    <rdf:Description rdf:about="Providencia"/>
+                    <rdf:Description rdf:about="Sentencia"/>
+                    <rdf:Description rdf:about="Auto"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="ResolucionJudicial"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una resoluci&#243;n judicial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Sentencia -->
+
+    <owl:Class rdf:about="Sentencia">
+        <rdfs:label xml:lang="es">Sentencia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="ResolucionJudicialEspanola"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Una sentencia judicial</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#TratadoInternacional -->
+
+    <owl:Class rdf:about="TratadoInternacional">
+        <rdfs:label xml:lang="es"
+            >Tratado Internacional</rdfs:label>
+        <rdfs:subClassOf rdf:resource="NormaJuridica"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un tratado entre uno o varios Estados</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#TribunalSuperiorJusticia -->
+
+    <owl:Class rdf:about="TribunalSuperiorJusticia">
+        <rdfs:label xml:lang="es"
+            >Un Tribunal Superior de Justicia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >Un Tribunal Superior de Justicia</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#TribunalSupremo -->
+
+    <owl:Class rdf:about="TribunalSupremo">
+        <rdfs:label xml:lang="es"
+            >El Tribunal Supremo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="OrganoJudicialEspanol"/>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI"
+            >http://purl.org/derecho/vocabulario#</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="es"
+            >El Tribunal Supremo del Estado espa&#241;ol</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3# -->
+
+    <owl:Thing rdf:about="file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3#"/>
+    
+
+
+    <!-- file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3#genid0 -->
+
+    <terms:IMT/>
+    
+
+
+    <!-- file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3#genid1 -->
+
+    <terms:IMT/>
+    
+
+
+    <!-- file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3#genid2 -->
+
+    <terms:IMT/>
+    
+
+
+    <!-- http://creativecommons.org/licenses/by-nc-sa/3.0/es -->
+
+    <owl:Thing rdf:about="&by-nc-sa;es"/>
+    
+
+
+    <!-- http://dbpedia.org/resource/Law -->
+
+    <owl:Thing rdf:about="&resource;Law">
+        <owl:sameAs rdf:resource=""/>
+    </owl:Thing>
+    
+
+
+    <!-- http://dbpedia.org/resource/Spain -->
+
+    <owl:Thing rdf:about="&resource;Spain"/>
+    
+
+
+    <!-- http://javierdelacueva.es/foaf#me -->
+
+    <owl:Thing rdf:about="&foaf2;me">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:name
+            >Javier de la Cueva</foaf:name>
+        <foaf:nick>jdelacueva</foaf:nick>
+    </owl:Thing>
+    
+
+
+    <!-- http://medialab-prado.es/article/ontologia_juridica_libre_-_laboratorio_del_procomun -->
+
+    <owl:Thing rdf:about="&medialab-prado;article/ontologia_juridica_libre_-_laboratorio_del_procomun">
+        <foaf:primaryTopic rdf:resource="file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3#"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://medialab-prado.es/laboratorio_del_procomun -->
+
+    <owl:Thing rdf:about="&medialab-prado;laboratorio_del_procomun">
+        <foaf:topic rdf:resource="file:/home/jdelacueva/proyectos/kelsen/trunk/rdf/vocabulario.n3#"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho -->
+
+    <owl:Thing rdf:about="&purl;derecho"/>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario# -->
+
+    <owl:Thing rdf:about="">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <terms:created rdf:datatype="&xsd;date">2010-06-12</terms:created>
+        <terms:modified rdf:datatype="&xsd;date">2010-06-13</terms:modified>
+        <terms:language>es</terms:language>
+        <terms:subject xml:lang="es">Derecho</terms:subject>
+        <terms:audience xml:lang="es"
+            >Estudiosos del Derecho</terms:audience>
+        <terms:provenance xml:lang="es">Obra original</terms:provenance>
+        <terms:subject xml:lang="es"
+            >Resoluci&#243;n judicial</terms:subject>
+        <vann:preferredNamespaceUri
+            >http://purl.org/derecho/vocabulario#</vann:preferredNamespaceUri>
+        <vann:preferredNamespacePrefix>derecho</vann:preferredNamespacePrefix>
+        <terms:subject xml:lang="es">Gobierno</terms:subject>
+        <terms:subject xml:lang="es">Ley</terms:subject>
+        <terms:description xml:lang="es"
+            >Una ontolog&#237;a jur&#237;dica libre. Versi&#243;n alfa, se producir&#225;n cambios.</terms:description>
+        <terms:title xml:lang="es"
+            >Vocabulario de Derecho</terms:title>
+        <ns:license rdf:resource="&by-nc-sa;es"/>
+        <terms:coverage rdf:resource="&resource;Spain"/>
+        <terms:publisher rdf:resource="&foaf2;me"/>
+        <terms:rightsholder rdf:resource="&foaf2;me"/>
+        <terms:creator rdf:resource="&foaf2;me"/>
+        <terms:identifier rdf:resource="&purl;derecho"/>
+        <terms:isVersionOf rdf:resource="&purl;derecho"/>
+        <terms:hasFormat rdf:resource="&purl;derecho/vocabulario/20100612.html"/>
+        <terms:hasFormat rdf:resource="&purl;derecho/vocabulario/20100612.n3"/>
+        <terms:hasFormat rdf:resource="&purl;derecho/vocabulario/20100612.rdf"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#AcuerdoJudicial -->
+
+    <owl:Thing rdf:about="AcuerdoJudicial">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La resoluci&#243;n judicial del art&#237;culo 244.1 de la Ley Org&#225;nica 6/1985, del Poder Judicial</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#AudienciaNacional -->
+
+    <owl:Thing rdf:about="AudienciaNacional">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-25</terms:issued>
+        <skos:definition xml:lang="es"
+            >La Audiencia Nacional es el &#243;rgano judicial definido en el art&#237;culo 62 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#AudienciaProvincial -->
+
+    <owl:Thing rdf:about="AudienciaProvincial">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-25</terms:issued>
+        <skos:definition xml:lang="es"
+            >Una Audiencia Provincial es el &#243;rgano judicial definido en el art&#237;culo 80 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Auto -->
+
+    <owl:Thing rdf:about="Auto">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La resoluci&#243;n judicial del art&#237;culo 245.1.b de la Ley Org&#225;nica 6/1985, del Poder Judicial</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Constitucion -->
+
+    <owl:Thing rdf:about="Constitucion">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma suprema de un Estado</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Decreto -->
+
+    <owl:Thing rdf:about="Decreto">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica del art&#237;culo 23.3.1 de la Ley 50/1997, del Gobierno</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#DecretoLegislativo -->
+
+    <owl:Thing rdf:about="DecretoLegislativo">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica del art&#237;culo 85 de la Constituci&#243;n espa&#241;ola</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#DecretoLey -->
+
+    <owl:Thing rdf:about="DecretoLey">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica del art&#237;culo 86.1 de la Constituci&#243;n espa&#241;ola</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoCentralInstruccion -->
+
+    <owl:Thing rdf:about="JuzgadoCentralInstruccion">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado Central de Instrucci&#243;n es el &#243;rgano judicial definido en el art&#237;culo 88 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoCentralMenores -->
+
+    <owl:Thing rdf:about="JuzgadoCentralMenores">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >El Juzgado Central de Menores es el &#243;rgano judicial definido en el art&#237;culo 96.2 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoCentralVigilanciaPenitenciaria -->
+
+    <owl:Thing rdf:about="JuzgadoCentralVigilanciaPenitenciaria">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado Central de Vigilancia Penitenciaria es el &#243;rgano judicial definido en el art&#237;culo 94.4 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoContenciosoAdministrativo -->
+
+    <owl:Thing rdf:about="JuzgadoContenciosoAdministrativo">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de lo Contencioso-Administrativo es el &#243;rgano judicial definido en el art&#237;culo 90 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoInstruccion -->
+
+    <owl:Thing rdf:about="JuzgadoInstruccion">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-25</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de Instrucci&#243;n es el &#243;rgano judicial definido en el art&#237;culo 87 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoMenores -->
+
+    <owl:Thing rdf:about="JuzgadoMenores">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de Menores es el &#243;rgano judicial definido en el art&#237;culo 96.1 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoMercantil -->
+
+    <owl:Thing rdf:about="JuzgadoMercantil">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de lo Mercantil es el &#243;rgano judicial definido en el art&#237;culo 86 bis de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoPaz -->
+
+    <owl:Thing rdf:about="JuzgadoPaz">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de Paz es el &#243;rgano judicial definido en el art&#237;culo 99 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoPenal -->
+
+    <owl:Thing rdf:about="JuzgadoPenal">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de lo Penal es el &#243;rgano judicial definido en el art&#237;culo 89 bis de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoPrimeraInstancia -->
+
+    <owl:Thing rdf:about="JuzgadoPrimeraInstancia">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-25</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de Primera Instancia es el &#243;rgano judicial definido en el art&#237;culo 85 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoPrimeraInstanciaInstruccion -->
+
+    <owl:Thing rdf:about="JuzgadoPrimeraInstanciaInstruccion">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de Primera Instancia e Instrucci&#243;n es el &#243;rgano judicial definido en el art&#237;culo 84 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoSocial -->
+
+    <owl:Thing rdf:about="JuzgadoSocial">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de lo Social es el &#243;rgano judicial definido en el art&#237;culo 92 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoVigilanciaPenitenciaria -->
+
+    <owl:Thing rdf:about="JuzgadoVigilanciaPenitenciaria">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de Vigilancia Penitenciaria es el &#243;rgano judicial definido en el art&#237;culo 94.1 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#JuzgadoViolenciaMujer -->
+
+    <owl:Thing rdf:about="JuzgadoViolenciaMujer">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-26</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Juzgado de Violencia sobre la Mujer es el &#243;rgano judicial definido en el art&#237;culo 87 bis de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#LeyDeBases -->
+
+    <owl:Thing rdf:about="LeyDeBases">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica del art&#237;culo 82.2 de la Constituci&#243;n espa&#241;ola</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#LeyMarco -->
+
+    <owl:Thing rdf:about="LeyMarco">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica del art&#237;culo 150.1 de la Constituci&#243;n espa&#241;ola</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#LeyOrdinaria -->
+
+    <owl:Thing rdf:about="LeyOrdinaria">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica del art&#237;culo 87 de la Constituci&#243;n espa&#241;ola</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#LeyOrganica -->
+
+    <owl:Thing rdf:about="LeyOrganica">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica del art&#237;culo 81.1 de la Constituci&#243;n espa&#241;ola</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#NormaJuridica -->
+
+    <owl:Thing rdf:about="NormaJuridica">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:prefLabel xml:lang="es">Norma jur&#237;dica</skos:prefLabel>
+        <skos:definition xml:lang="es"
+            >Una norma jur&#237;dica de Derecho positivo</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#NormaJuridicaEspanola -->
+
+    <owl:Thing rdf:about="NormaJuridicaEspanola">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-15</terms:issued>
+        <skos:definition xml:lang="es"
+            >Una norma jur&#237;dica del Ordenamiento central, auton&#243;mico o local espa&#241;ol</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#OrdenMinisterial -->
+
+    <owl:Thing rdf:about="OrdenMinisterial">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica del art&#237;culo 23.3.2 de la Ley 50/1997, del Gobierno</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#OrganoJudicial -->
+
+    <owl:Thing rdf:about="OrganoJudicial">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-25</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un &#243;rgano judicial</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#OrganoJudicialEspanol -->
+
+    <owl:Thing rdf:about="OrganoJudicialEspanol">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-25</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un &#243;rgano judicial del Estado espa&#241;ol</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Providencia -->
+
+    <owl:Thing rdf:about="Providencia">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La resoluci&#243;n judicial del art&#237;culo 245.1.a de la Ley Org&#225;nica 6/1985, del Poder Judicial</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Reglamento -->
+
+    <owl:Thing rdf:about="Reglamento">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La norma jur&#237;dica emanada de la potestad reglamentaria de las Administraciones p&#250;blicas, art&#237;culo 97 de la Constituci&#243;n espa&#241;ola</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#ResolucionJudicial -->
+
+    <owl:Thing rdf:about="ResolucionJudicial">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La resoluci&#243;n judicial del cap&#237;tulo IV del T&#237;tulo III del Libro III de la Ley Org&#225;nica 6/1985, del Poder Judicial</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#ResolucionJudicialEspanola -->
+
+    <owl:Thing rdf:about="ResolucionJudicialEspanola">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La resoluci&#243;n judicial del cap&#237;tulo IV del T&#237;tulo III del Libro III de la Ley Org&#225;nica 6/1985, del Poder Judicial</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#Sentencia -->
+
+    <owl:Thing rdf:about="Sentencia">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >La resoluci&#243;n judicial del art&#237;culo 245.1.c de la Ley Org&#225;nica 6/1985, del Poder Judicial</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#TratadoInternacional -->
+
+    <owl:Thing rdf:about="TratadoInternacional">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-12</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un tratado entre uno o varios Estados</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#TribunalSuperiorJusticia -->
+
+    <owl:Thing rdf:about="TribunalSuperiorJusticia">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-25</terms:issued>
+        <skos:definition xml:lang="es"
+            >Un Tribunal Superior de Justicia es el &#243;rgano judicial definido en el art&#237;culo 70 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario#TribunalSupremo -->
+
+    <owl:Thing rdf:about="TribunalSupremo">
+        <terms:issued rdf:datatype="&xsd;date">2010-06-25</terms:issued>
+        <skos:definition xml:lang="es"
+            >El Tribunal Supremo es el &#243;rgano judicial definido en el art&#237;culo 123.1 de la Constituci&#243;n espa&#241;ola y en el art&#237;culo 53 de la Ley Org&#225;nica del Poder Judicial.</skos:definition>
+    </owl:Thing>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario/20100612.html -->
+
+    <owl:Thing rdf:about="&purl;derecho/vocabulario/20100612.html">
+        <rdf:type rdf:resource="&purl;dc/dcmitype/Text"/>
+        <terms:format>
+            <rdf:Description/>
+        </terms:format>
+    </owl:Thing>
+    <rdf:Description>
+        <rdfs:label xml:lang="es">HTML</rdfs:label>
+    </rdf:Description>
+    <terms:IMT/>
+    <rdf:Description>
+        <rdf:value>text/html</rdf:value>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario/20100612.n3 -->
+
+    <owl:Thing rdf:about="&purl;derecho/vocabulario/20100612.n3">
+        <rdf:type rdf:resource="&purl;dc/dcmitype/Text"/>
+        <terms:format>
+            <rdf:Description/>
+        </terms:format>
+    </owl:Thing>
+    <terms:IMT/>
+    <rdf:Description>
+        <rdf:value>text/rdf+n3</rdf:value>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label xml:lang="es">N3</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/derecho/vocabulario/20100612.rdf -->
+
+    <owl:Thing rdf:about="&purl;derecho/vocabulario/20100612.rdf">
+        <rdf:type rdf:resource="&purl;dc/dcmitype/Text"/>
+        <terms:format>
+            <rdf:Description/>
+        </terms:format>
+    </owl:Thing>
+    <rdf:Description>
+        <rdfs:label xml:lang="es">RDF</rdfs:label>
+    </rdf:Description>
+    <terms:IMT/>
+    <rdf:Description>
+        <rdf:value
+            >application/rdf+xml</rdf:value>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="AudienciaNacional"/>
+            <rdf:Description rdf:about="AudienciaProvincial"/>
+            <rdf:Description rdf:about="JuzgadoInstruccion"/>
+            <rdf:Description rdf:about="JuzgadoPrimeraInstancia"/>
+            <rdf:Description rdf:about="TribunalSuperiorJusticia"/>
+            <rdf:Description rdf:about="TribunalSupremo"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="NormaJuridica"/>
+            <rdf:Description rdf:about="OrganoJudicial"/>
+            <rdf:Description rdf:about="ResolucionJudicial"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="AcuerdoJudicial"/>
+            <rdf:Description rdf:about="Auto"/>
+            <rdf:Description rdf:about="Providencia"/>
+            <rdf:Description rdf:about="Sentencia"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="Decreto"/>
+            <rdf:Description rdf:about="DecretoLegislativo"/>
+            <rdf:Description rdf:about="DecretoLey"/>
+            <rdf:Description rdf:about="LeyDeBases"/>
+            <rdf:Description rdf:about="LeyMarco"/>
+            <rdf:Description rdf:about="LeyOrdinaria"/>
+            <rdf:Description rdf:about="LeyOrganica"/>
+            <rdf:Description rdf:about="OrdenMinisterial"/>
+            <rdf:Description rdf:about="Reglamento"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="Constitucion"/>
+            <rdf:Description rdf:about="NormaJuridicaEspanola"/>
+            <rdf:Description rdf:about="TratadoInternacional"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

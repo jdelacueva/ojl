@@ -1,0 +1,204 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Organos del poder judicial
+#
+# Juzgados y Tribunales
+# =====================
+
+# Artículos 53 a 103 de la Ley Orgánica del Poder Judicial
+
+derecho:OrganoJudicial a owl:Class, rdfs:Class;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un órgano judicial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un órgano judicial"@es ;
+    skos:definition "Un órgano judicial"@es .
+
+derecho:OrganoJudicialEspanol a owl:Class, rdfs:Class ;
+    rdfs:subClassOf derecho:OrganoJudicial ;
+    dcterms:issued "2010-06-25"^^xsd:date ;
+    rdfs:comment "Un órgano judicial del Estado español"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "Un órgano judicial del Estado español"@es ;
+    dcterms:Jurisdiction dbpedia:Spain ;
+    skos:definition "Un órgano judicial del Estado español"@es .
+
+derecho:TribunalSupremo a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "El Tribunal Supremo del Estado español"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "El Tribunal Supremo"@es;
+    skos:definition "El Tribunal Supremo es el órgano judicial definido en el artículo 123.1 de la Constitución española y en el artículo 53 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:AudienciaNacional a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "La Audiencia Nacional"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "La Audiencia Nacional"@es;
+    skos:definition "La Audiencia Nacional es el órgano judicial definido en el artículo 62 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:TribunalSuperiorJusticia a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un Tribunal Superior de Justicia"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Tribunal Superior de Justicia"@es;
+    skos:definition "Un Tribunal Superior de Justicia es el órgano judicial definido en el artículo 70 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:AudienciaProvincial a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Una Audiencia Provincial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Una Audiencia Provincial"@es;
+    skos:definition "Una Audiencia Provincial es el órgano judicial definido en el artículo 80 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoPrimeraInstancia a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un Juzgado de Primera Instancia"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Primera Instancia"@es;
+    skos:definition "Un Juzgado de Primera Instancia es el órgano judicial definido en el artículo 85 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoInstruccion a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-25"^^xsd:date;
+    rdfs:comment "Un Juzgado de Instrucción"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Instrucción"@es;
+    skos:definition "Un Juzgado de Instrucción es el órgano judicial definido en el artículo 87 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoPrimeraInstanciaInstruccion a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Primera Instancia e Instrucción"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Primera Instancia e Instrucción"@es;
+    skos:definition "Un Juzgado de Primera Instancia e Instrucción es el órgano judicial definido en el artículo 84 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoMercantil a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de lo Mercantil"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de lo Mercantil"@es;
+    skos:definition "Un Juzgado de lo Mercantil es el órgano judicial definido en el artículo 86 bis de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoViolenciaMujer a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Violencia sobre la Mujer"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Violencia sobre la Mujer"@es;
+    skos:definition "Un Juzgado de Violencia sobre la Mujer es el órgano judicial definido en el artículo 87 bis de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoCentralInstruccion a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado Central de Instrucción"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado Central de Instrucción"@es;
+    skos:definition "Un Juzgado Central de Instrucción es el órgano judicial definido en el artículo 88 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoPenal a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de lo Penal"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de lo Penal"@es;
+    skos:definition "Un Juzgado de lo Penal es el órgano judicial definido en el artículo 89 bis de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoContenciosoAdministrativo a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de lo Contencioso-Administrativo"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de lo Contencioso-Administrativo"@es;
+    skos:definition "Un Juzgado de lo Contencioso-Administrativo es el órgano judicial definido en el artículo 90 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoSocial a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de lo Social"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de lo Social"@es;
+    skos:definition "Un Juzgado de lo Social es el órgano judicial definido en el artículo 92 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoVigilanciaPenitenciaria a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Vigilancia Penitenciaria"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Vigilancia Penitenciaria"@es;
+    skos:definition "Un Juzgado de Vigilancia Penitenciaria es el órgano judicial definido en el artículo 94.1 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoCentralVigilanciaPenitenciaria a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado Central de Vigilancia Penitenciaria"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado Central de Vigilancia Penitenciaria"@es;
+    skos:definition "Un Juzgado Central de Vigilancia Penitenciaria es el órgano judicial definido en el artículo 94.4 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoMenores a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Menores"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Menores"@es;
+    skos:definition "Un Juzgado de Menores es el órgano judicial definido en el artículo 96.1 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoCentralMenores a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "El Juzgado Central de Menores"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "El Juzgado Central de Menores"@es;
+    skos:definition "El Juzgado Central de Menores es el órgano judicial definido en el artículo 96.2 de la Ley Orgánica del Poder Judicial."@es .
+
+derecho:JuzgadoPaz a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:OrganoJudicialEspanol;
+    dcterms:issued "2010-06-26"^^xsd:date;
+    rdfs:comment "Un Juzgado de Paz"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Un Juzgado de Paz"@es;
+    skos:definition "Un Juzgado de Paz es el órgano judicial definido en el artículo 99 de la Ley Orgánica del Poder Judicial."@es .
+
+
+# Disjoint classes
+# ================
+
+derecho:OrganoJudicialEspanol a owl:AllDisjointClasses;
+    owl:members  ( derecho:AudienciaNacional derecho:AudienciaProvincial
+                 derecho:JuzgadoCentralInstruccion derecho:JuzgadoCentralMenores
+                 derecho:JuzgadoCentralVigilanciaPenitenciaria derecho:JuzgadoContenciosoAdministrativo
+                 derecho:JuzgadoInstruccion derecho:JuzgadoMenores derecho:JuzgadoMercantil
+                 derecho:JuzgadoPaz derecho:JuzgadoPenal derecho:JuzgadoPrimeraInstancia
+                 derecho:JuzgadoPrimeraInstanciaInstruccion
+                 derecho:JuzgadoSocial derecho:JuzgadoVigilanciaPenitenciaria
+                 derecho:JuzgadoViolenciaMujer derecho:TribunalSuperiorJusticia derecho:TribunalSupremo ) .
+
+derecho:OrganoJudicialEspanol owl:oneOf
+    ( derecho:AudienciaNacional derecho:AudienciaProvincial
+    derecho:JuzgadoCentralInstruccion derecho:JuzgadoCentralMenores
+    derecho:JuzgadoCentralVigilanciaPenitenciaria derecho:JuzgadoContenciosoAdministrativo
+    derecho:JuzgadoInstruccion derecho:JuzgadoMenores derecho:JuzgadoMercantil
+    derecho:JuzgadoPaz derecho:JuzgadoPenal derecho:JuzgadoPrimeraInstancia
+    derecho:JuzgadoPrimeraInstanciaInstruccion
+    derecho:JuzgadoSocial derecho:JuzgadoVigilanciaPenitenciaria
+    derecho:JuzgadoViolenciaMujer derecho:TribunalSuperiorJusticia derecho:TribunalSupremo ) .
+

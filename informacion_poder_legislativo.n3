@@ -1,0 +1,152 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Información generada por las personas utilizando los órganos del poder legislativo.
+#
+# Normas Jurídicas
+# ================
+
+derecho:NormaJuridica a owl:Class, rdfs:Class;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una norma jurídica"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Norma jurídica"@es;
+    skos:definition "Una norma jurídica de Derecho positivo"@es ;
+    skos:prefLabel "Norma jurídica"@es .
+
+derecho:TratadoInternacional a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridica;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un tratado entre uno o varios Estados"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Tratado Internacional"@es;
+    skos:definition "Un tratado entre uno o varios Estados"@es .
+
+derecho:Constitucion a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridica;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "La norma suprema de un Estado"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Constitución"@es;
+    skos:definition "La norma suprema de un Estado"@es .
+
+derecho:NormaJuridicaEspanola a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridica;
+    dcterms:issued "2010-06-23"^^xsd:date;
+    rdfs:comment "Una norma jurídica del Ordenamiento español"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Una norma jurídica del Ordenamiento español"@es;
+    skos:definition "Una norma jurídica del Ordenamiento central, autonómico o local español"@es .
+
+derecho:LeyOrganica a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una ley orgánica"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Ley orgánica"@es;
+    skos:definition "La norma jurídica del artículo 81.1 de la Constitución española"@es .
+
+derecho:LeyOrdinaria a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una Ley ordinaria"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Ley ordinaria"@es;
+    skos:definition "La norma jurídica del artículo 87 de la Constitución española"@es .
+
+derecho:DecretoLegislativo a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un decreto legislativo"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Decreto legislativo"@es;
+    skos:definition "La norma jurídica del artículo 85 de la Constitución española"@es .
+
+derecho:DecretoLey a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un Decreto-ley"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Decreto-ley"@es;
+    skos:definition "La norma jurídica del artículo 86.1 de la Constitución española"@es .
+
+derecho:LeyDeBases a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una Ley de bases"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Ley de Bases"@es;
+    skos:definition "La norma jurídica del artículo 82.2 de la Constitución española"@es .
+
+derecho:LeyMarco a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una Ley marco"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Ley marco"@es;
+    skos:definition "La norma jurídica del artículo 150.1 de la Constitución española"@es .
+
+derecho:Reglamento a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un reglamento"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Reglamento"@es;
+    skos:definition "La norma jurídica emanada de la potestad reglamentaria de las Administraciones públicas, artículo 97 de la Constitución española"@es .
+
+derecho:Decreto a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Un decreto"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Decreto"@es;
+    skos:definition "La norma jurídica del artículo 23.3.1 de la Ley 50/1997, del Gobierno"@es .
+
+derecho:OrdenMinisterial a owl:Class, rdfs:Class;
+    rdfs:subClassOf derecho:NormaJuridicaEspanola;
+    dcterms:issued "2010-06-12"^^xsd:date;
+    rdfs:comment "Una Orden Ministerial"@es;
+    rdfs:isDefinedBy derecho:;
+    rdfs:label "Orden Ministerial"@es;
+    skos:definition "La norma jurídica del artículo 23.3.2 de la Ley 50/1997, del Gobierno"@es .
+
+# Disjoint classes
+# ================
+
+derecho:NormaJuridica a owl:AllDisjointClasses;
+    owl:members  ( derecho:TratadoInternacional derecho:Constitucion derecho:NormaJuridicaEspanola) . 
+
+derecho:NormaJuridica owl:oneOf ( derecho:TratadoInternacional derecho:Constitucion
+                      derecho:NormaJuridicaEspanola) .
+
+derecho:NormaJuridicaEspanola a owl:AllDisjointClasses;
+    owl:members  ( derecho:LeyOrganica derecho:LeyOrdinaria derecho:DecretoLegislativo
+                 derecho:DecretoLey derecho:LeyDeBases derecho:LeyMarco derecho:Reglamento
+                 derecho:OrdenMinisterial derecho:Decreto ) .
+
+derecho:NormaJuridicaEspanola owl:oneOf
+    ( derecho:LeyOrganica derecho:LeyOrdinaria derecho:DecretoLegislativo derecho:DecretoLey
+    derecho:LeyDeBases derecho:LeyMarco derecho:Reglamento derecho:OrdenMinisterial derecho:Decreto ) . 
+
+# Properties
+#===========
+
+derecho:numeroIdentificador a rdf:Property, owl:inverseFunctionalProperty ;
+    rdfs:SubClassOf dcterms:identifier ;
+    rdfs:comment "número identificador de una norma jurídica"@es ;
+    rdfs:isDefinedBy derecho: ;
+    rdfs:label "número identificador"@es ;
+    skos:definition "una norma jurídica tiene un número identificador único en el Boletín Oficial del Estado"@es ;
+    rdf:range derecho:NormaJuridicaEspanola .
+
+

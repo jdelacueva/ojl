@@ -1,0 +1,112 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix derecho: <http://purl.org/derecho/vocabulario#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Metadata
+# ========
+
+<http://purl.org/derecho/vocabulario#> a owl:Ontology ;
+    owl:versionInfo "20100626" ;
+    owl:priorVersion "20100623" ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/informacion_administracion_local.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/informacion_autonomica_ejecutiva.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/informacion_autonomica_legislativa.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/informacion_organos_constitucionales.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/informacion_poder_ejecutivo.n3> ;
+    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/informacion_poder_judicial.n3> ;
+    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/informacion_poder_legislativo.n3> ;
+    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/organizacion_territorial.n3> ;
+    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/organos_administracion_local.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/organos_autonomicos_ejecutivos.n3> ;
+    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/organos_autonomicos_legislativos.n3> ;
+    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/organos_constitucionales.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/organos_poder_ejecutivo.n3> ;
+    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/organos_poder_judicial.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/organos_poder_legislativo.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/personas_administracion_local.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/personas_autonomicas_ejecutivo.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/personas_autonomicas_legislativo.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/personas_organos_constitucionales.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/personas_poder_ejecutivo.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/personas_poder_judicial.n3> ;
+#    owl:imports <http://derecho-internet.org/svn/kelsen/trunk/rdf/personas_poder_legislativo.n3> ;
+    dcterms:identifier <http://purl.org/derecho/vocabulario> ;
+    dcterms:title "Vocabulario de Derecho"@es ;
+    dcterms:creator <http://javierdelacueva.es/foaf#me> ;
+    dcterms:publisher <http://javierdelacueva.es/foaf#me> ;
+    dcterms:description "Una ontología jurídica libre. Versión alfa, se producirán cambios."@es ;
+    dcterms:subject "Derecho"@es ;
+    dcterms:subject "Ley"@es ;
+    dcterms:subject "Resolución judicial"@es ;
+    dcterms:subject "Gobierno"@es ;
+    dcterms:coverage dbpedia:Spain ;
+    dcterms:language "es" ;
+    dcterms:audience "Estudiosos del Derecho"@es ;
+    dcterms:provenance "Obra original"@es ;
+    dcterms:rightsholder <http://javierdelacueva.es/foaf#me> ;
+    dcterms:hasFormat <http://purl.org/derecho/vocabulario/20100612.html> ,
+                      <http://purl.org/derecho/vocabulario/20100612.rdf> ,
+                      <http://purl.org/derecho/vocabulario/20100612.n3> ;
+    dcterms:isVersionOf <http://purl.org/derecho/vocabulario> ;
+    dcterms:created "2010-06-12"^^xsd:date ;
+    dcterms:modified "2010-06-26"^^xsd:date ;
+    dcterms:issued "2010-06-12"^^xsd:date ;
+    vann:preferredNamespacePrefix "derecho" ;
+    vann:preferredNamespaceUri "http://purl.org/derecho/vocabulario#" ;
+    rdfs:comment "Ontología jurídica libre: conceptos jurídicos. La Ontología jurídica libre nace como un proyecto para el Laboratorio del Procomún, en el marco del Medialab Prado de Madrid."@es ;
+    cc:license <http://creativecommons.org/licenses/by/3.0/es> ;
+    owl:sameAs dbpedia:Law .
+
+<http://medialab-prado.es/article/ontologia_juridica_libre_-_laboratorio_del_procomun> foaf:primaryTopic <> .
+
+<http://medialab-prado.es/laboratorio_del_procomun> foaf:topic <> .
+
+<http://javierdelacueva.es/foaf#me> a foaf:Person;
+    foaf:name "Javier de la Cueva";
+    foaf:nick "jdelacueva" .
+
+<http://purl.org/derecho/vocabulario/20100612.html> a dctype:Text;
+    dcterms:format [
+        a dcterms:IMT;
+        rdf:value "text/html";
+        rdfs:label "HTML"@es ] .
+
+<http://purl.org/derecho/vocabulario/20100612.rdf> a dctype:Text;
+    dcterms:format [
+        a dcterms:IMT;
+        rdf:value "application/rdf+xml";
+        rdfs:label "RDF"@es ] .
+
+<http://purl.org/derecho/vocabulario/20100612.n3> a dctype:Text;
+    dcterms:format [
+        a dcterms:IMT;
+        rdf:value "text/rdf+n3";
+        rdfs:label "N3"@es ] .
+
+## Esquema de la ontología:
+## Poder: personas, organismos, información
+#
+# Legislativo: parlamentario, parlamento, normajuridica
+# Ejecutivo: funcionario, organo, normajuridica, dataset
+# Judicial: juez, juzgado, resolucionjudicial
+# Otros órganos constitucionales: miembros, organos, nombre de la información
+# Legislativos autonómicos: parlamentario, Parlamento, normas autonómica
+# Ejecutivos autonómicos: funcionario, organo, normajuridica, dataset
+# Administración local: Diputados provinciales, alcaldes, concejales, órganos, normativa local
+
+
+# Disjoint classes
+# ================
+
+derecho: a owl:AllDisjointClasses;
+    owl:members  ( derecho:NormaJuridica derecho:OrganoJudicial derecho:ResolucionJudicial ) .
+
