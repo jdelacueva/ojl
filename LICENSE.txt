@@ -1,0 +1,5 @@
+Copyright Javier de la Cueva
+
+Text is licensed under Creative Commons By
+
+Code is licensed under GPL v3
