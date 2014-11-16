@@ -26,11 +26,11 @@ import rdflib
 
 from os import path
 from rdflib.graph import ConjunctiveGraph
-from jinja2 import Environment, FileSystemLoader
 from rdflib import ConjunctiveGraph
 from rdflib import URIRef
 from rdflib import Namespace
 from rdflib import RDF, RDFS
+from jinja2 import Environment, FileSystemLoader
 
 # Change following lines as per your configuration:
 TEMPLATE_PATH = path.join(path.dirname(__file__), 'templates')
@@ -62,21 +62,6 @@ def get_list_ns(g):
         prefix, iri = item[0].encode(), item[1].expandtabs()
         d = {"prefix":prefix, "iri":iri}
         result.append(d)
-    return result
-
-def get_list_classes(g):
-    result = list()
-    l = list(g.triples((None, None, rdflib.term.URIRef('http://www.w3.org/2000/01/rdf-schema#Class'))))
-    subjects = [item[0] for item in l]
-    subjects.sort()
-    for item in subjects:
-        lista = list()
-        po = list(g.triples((item, None, None)))
-        for element in po:
-            d = {'predicate':element[1].expandtabs(), 'object': element[2].expandtabs()}
-            lista.append(d)
-        clases = {'subject':item.partition('#')[2], 'po': lista}
-        result.append(clases)
     return result
 
 def get_list_classes(g):
